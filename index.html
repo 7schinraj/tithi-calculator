@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Tithi Devathai Calculator | REKHA THE TAROT QUEEN</title>
+  <meta name="description" content="Free Tithi Devathai Calculator by REKHA THE TAROT QUEEN. Enter your birth date, exact birth time and birthplace time zone to identify your birth Tithi, Paksha and Nitya Devi.">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- External Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Astronomy & Timezone CDN Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/luxon@3.5.0/build/global/luxon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/astronomy.browser.min.js"></script>
+  
+  <!-- Application Logic -->
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="shell">
+    <header class="header-bar">
+      <div class="brand-mark">
+        <svg class="icon icon-stroke" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+        REKHA THE TAROT QUEEN
+      </div>
+      <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+        <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+        <span>Dark Mode</span>
+      </button>
+    </header>
+
+    <main class="hero">
+      <span class="badge">
+        <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+        FREE SPIRITUAL TOOL
+      </span>
+      
+      <h1>Tithi Devathai Calculator</h1>
+      <div class="tamil-title">உங்கள் திதி தேவதையை அறியுங்கள்</div>
+      
+      <p class="intro">
+        Enter your <strong>date of birth, exact birth time and birthplace time zone</strong>. 
+        This calculator identifies your <strong>birth Tithi, Paksha and corresponding Nitya Devi</strong>.
+      </p>
+
+      <section class="section">
+        <h2>Your Birth Details</h2>
+        <p>உங்கள் பிறந்த தேதி, நேரம் மற்றும் பிறந்த இடத்தின் நேர மண்டலத்தை உள்ளிடுங்கள்.</p>
+        
+        <div class="grid">
+          <div class="form-group" id="dobGroup">
+            <label for="dob">Date of Birth <small>பிறந்த தேதி</small></label>
+            <div class="input-wrapper" id="dobWrapper">
+              <svg class="input-prefix-icon icon icon-stroke" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+              <input id="dob" type="text" placeholder="YYYY-MM-DD" readonly required>
+            </div>
+            <div class="error-msg" id="dobError"></div>
+            <!-- Custom Interactive Calendar Component -->
+            <div id="calendarPopover" class="calendar-popover"></div>
+          </div>
+          
+          <div class="form-group" id="tobGroup">
+            <label for="tob">Exact Birth Time <small>சரியான பிறந்த நேரம்</small></label>
+            <div class="input-wrapper" id="tobWrapper">
+              <svg class="input-prefix-icon icon icon-stroke" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+              <input id="tob" type="time" required>
+            </div>
+            <div class="error-msg" id="tobError"></div>
+          </div>
+          
+          <div class="form-group full" id="placeGroup">
+            <label for="place">Birthplace <small>பிறந்த இடம்</small></label>
+            <div class="input-wrapper">
+              <svg class="input-prefix-icon icon icon-stroke" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+              <input id="place" type="text" placeholder="e.g. Chennai, Tamil Nadu, India">
+            </div>
+          </div>
+          
+          <div class="form-group" id="tzGroup">
+            <label for="tzSelectInput">Birthplace Time Zone <small>பிறந்த இடத்தின் நேர மண்டலம்</small></label>
+            <div class="input-wrapper" id="tzWrapper">
+              <svg class="input-prefix-icon icon icon-stroke" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <input id="tzSelectInput" type="text" placeholder="Select Time Zone" readonly required>
+              <input id="tz" type="hidden" value="Asia/Kolkata">
+              <svg class="input-suffix-icon icon icon-stroke" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </div>
+            <div class="error-msg" id="tzError"></div>
+            <!-- Custom Timezone Dropdown Component -->
+            <div id="tzCustomPopover" class="tz-popover"></div>
+          </div>
+          
+          <div class="form-group hidden" id="customTzGroup">
+            <label for="customTz">Custom Time Zone <small>தேவையானால் மட்டும்</small></label>
+            <div class="input-wrapper">
+              <svg class="input-prefix-icon icon icon-stroke" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><line x1="2" y1="12" x2="22" y2="12"></line><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path></svg>
+              <input id="customTz" type="text" placeholder="e.g. Europe/Paris">
+            </div>
+            <div class="error-msg" id="customTzError"></div>
+          </div>
+        </div>
+
+        <div id="globalAlert" class="banner-alert hidden"></div>
+
+        <button id="calcBtn" class="btn-calc">
+          <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+          Find My Tithi Devathai
+        </button>
+
+        <div id="result" class="result">
+          <div class="result-tag">
+            <svg class="icon icon-stroke" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+            YOUR NITYA DEVI
+          </div>
+          <div id="devName" class="devi"></div>
+          <div id="devTamil" class="devi-ta"></div>
+          
+          <div class="cards">
+            <div class="card">
+              <b>
+                <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                Paksha
+              </b>
+              <span id="paksha"></span>
+            </div>
+            <div class="card">
+              <b>
+                <svg class="icon icon-stroke" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+                Birth Tithi
+              </b>
+              <span id="tithi"></span>
+            </div>
+            <div class="card">
+              <b>
+                <svg class="icon icon-stroke" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
+                Lunar Phase
+              </b>
+              <span id="angle"></span>
+            </div>
+          </div>
+
+          <div id="meaning" class="meaning"></div>
+          <div id="sourceNote" class="note"></div>
+        </div>
+      </section>
+
+      <details>
+        <summary>
+          <svg class="icon icon-stroke" viewBox="0 0 24 24"><line x1="8" y1="6" x2="21" y2="6"></line><line x1="8" y1="12" x2="21" y2="12"></line><line x1="8" y1="18" x2="21" y2="18"></line><line x1="3" y1="6" x2="3.01" y2="6"></line><line x1="3" y1="12" x2="3.01" y2="12"></line><line x1="3" y1="18" x2="3.01" y2="18"></line></svg>
+          View the Nitya Devi mapping used in this calculator
+        </summary>
+        <table>
+          <thead>
+            <tr>
+              <th>Tithi</th>
+              <th>Krishna Paksha</th>
+              <th>Shukla Paksha</th>
+            </tr>
+          </thead>
+          <tbody id="mapTable"></tbody>
+        </table>
+      </details>
+
+      <div class="share">
+        <svg class="icon icon-stroke" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+        <div>
+          <strong>Share this free calculator with your family and friends.</strong><br>
+          இந்த இலவச calculator-ஐ உங்கள் குடும்பத்தினர் மற்றும் நண்பர்களுடன் பகிரலாம்.
+        </div>
+      </div>
+
+      <div class="disclaimer">
+        <strong>Important:</strong> This is a spiritual-reference calculator based on a specific Sri Vidya Tithi-Nitya mapping. Traditions and lineages may differ. For formal Sri Vidya mantra or ritual practice, please follow the guidance of a qualified Guru or your lineage.
+      </div>
+
+      <footer class="footer">
+        Created for REKHA THE TAROT QUEEN • Free Tithi Devathai Calculator<br>
+        Internet access is required when opened so the astronomy and timezone libraries can load.
+      </footer>
+    </main>
+  </div>
+</body>
+</html>
