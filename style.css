@@ -868,13 +868,38 @@ tr:last-child td {
 
 /* Responsive Rules */
 @media (max-width: 720px) {
+  .shell {
+    padding: 16px 12px 40px;
+  }
+
   .header-bar {
-    flex-direction: flex-row;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+  }
+
+  .brand-mark {
+    font-size: 11px;
+    padding: 6px 14px;
+    gap: 6px;
+  }
+
+  .theme-toggle-btn {
+    padding: 8px;
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    justify-content: center;
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+
+  .theme-toggle-btn span {
+    display: none;
   }
   
   .hero {
-    padding: 24px 18px;
+    padding: 22px 14px;
   }
   
   .grid, .cards {
@@ -896,9 +921,32 @@ tr:last-child td {
   
   .calendar-popover {
     width: 100%;
-    max-width: 310px;
-    left: 50%;
-    transform: translateX(-50%);
+    max-width: 100%;
+    left: 0;
+    right: 0;
+    padding: 14px 10px;
+    box-sizing: border-box;
+  }
+
+  .calendar-header {
+    gap: 4px;
+  }
+
+  .calendar-selects {
+    gap: 4px;
+  }
+
+  .calendar-selects select {
+    padding: 2px 16px 2px 6px !important;
+    font-size: 12px !important;
+  }
+
+  .calendar-days {
+    gap: 2px;
+  }
+
+  .calendar-day-cell {
+    font-size: 12px;
   }
   
   table {
@@ -909,3 +957,4 @@ tr:last-child td {
     padding: 8px 6px;
   }
 }
+
