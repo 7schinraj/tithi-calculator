@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Free Tithi Devathai Calculator | REKHA THE TAROT QUEEN</title>
-  <meta name="description" content="Free Tithi Devathai Calculator by REKHA THE TAROT QUEEN. Enter your birth date, exact birth time and birthplace time zone to identify your birth Tithi, Paksha and Nitya Devi.">
+  <meta name="description" content="Discover your birth Tithi Devathai — the Nitya Devi who governs your lunar birth day. Free calculator by REKHA THE TAROT QUEEN.">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
@@ -12,7 +12,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Outfit:wght@400;500;600;700;800&family=Noto+Serif+Devanagari:wght@400;600&display=swap" rel="stylesheet">
 
   <!-- External Stylesheet -->
   <link rel="stylesheet" href="style.css">
@@ -21,40 +21,192 @@
   <script src="https://cdn.jsdelivr.net/npm/luxon@3.5.0/build/global/luxon.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/astronomy.browser.min.js"></script>
   
+  <!-- Three.js 3D Library for Cosmic Geometry & Animations -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  
   <!-- Application Logic -->
   <script src="app.js" defer></script>
 </head>
 <body>
-  <div class="shell">
-    <header class="header-bar">
-      <div class="brand-mark">
+
+  <!-- FIXED GLOBAL THEME CONTROLLER -->
+  <aside class="global-theme-bar" aria-label="Theme Controller">
+    <button id="themeToggle" class="theme-toggle-btn" aria-label="Switch Theme">
+      <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+      <span>Dark Mode</span>
+    </button>
+  </aside>
+
+  <!-- HERO SPLASH -->
+  <section class="splash-hero" id="top">
+    <div class="splash-particles">
+      <span class="particle p1"></span>
+      <span class="particle p2"></span>
+      <span class="particle p3"></span>
+      <span class="particle p4"></span>
+      <span class="particle p5"></span>
+      <span class="particle p6"></span>
+    </div>
+    <div class="splash-inner">
+      <div class="splash-brand">
         <svg class="icon icon-stroke" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
         REKHA THE TAROT QUEEN
+        <svg class="icon icon-stroke" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
       </div>
-      <button id="themeToggle" class="theme-toggle-btn" aria-label="Toggle Theme">
-        <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-        <span>Dark Mode</span>
-      </button>
-    </header>
+      <div class="splash-yantra-wrap">
+        <svg class="splash-yantra" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="100" cy="100" r="95" fill="none" stroke="rgba(255,215,100,0.5)" stroke-width="1.5"/>
+          <circle cx="100" cy="100" r="78" fill="none" stroke="rgba(255,215,100,0.3)" stroke-width="1"/>
+          <circle cx="100" cy="100" r="60" fill="none" stroke="rgba(255,215,100,0.4)" stroke-width="1"/>
+          <ellipse cx="100" cy="22" rx="9" ry="20" fill="rgba(255,215,100,0.12)" transform="rotate(0 100 100)"/>
+          <ellipse cx="100" cy="22" rx="9" ry="20" fill="rgba(255,215,100,0.12)" transform="rotate(30 100 100)"/>
+          <ellipse cx="100" cy="22" rx="9" ry="20" fill="rgba(255,215,100,0.12)" transform="rotate(60 100 100)"/>
+          <ellipse cx="100" cy="22" rx="9" ry="20" fill="rgba(255,215,100,0.12)" transform="rotate(90 100 100)"/>
+          <ellipse cx="100" cy="22" rx="9" ry="20" fill="rgba(255,215,100,0.12)" transform="rotate(120 100 100)"/>
+          <ellipse cx="100" cy="22" rx="9" ry="20" fill="rgba(255,215,100,0.12)" transform="rotate(150 100 100)"/>
+          <ellipse cx="100" cy="22" rx="9" ry="20" fill="rgba(255,215,100,0.12)" transform="rotate(180 100 100)"/>
+          <ellipse cx="100" cy="22" rx="9" ry="20" fill="rgba(255,215,100,0.12)" transform="rotate(210 100 100)"/>
+          <ellipse cx="100" cy="22" rx="9" ry="20" fill="rgba(255,215,100,0.12)" transform="rotate(240 100 100)"/>
+          <ellipse cx="100" cy="22" rx="9" ry="20" fill="rgba(255,215,100,0.12)" transform="rotate(270 100 100)"/>
+          <ellipse cx="100" cy="22" rx="9" ry="20" fill="rgba(255,215,100,0.12)" transform="rotate(300 100 100)"/>
+          <ellipse cx="100" cy="22" rx="9" ry="20" fill="rgba(255,215,100,0.12)" transform="rotate(330 100 100)"/>
+          <polygon points="100,42 148,128 52,128" fill="none" stroke="rgba(255,215,100,0.65)" stroke-width="1.5"/>
+          <polygon points="100,158 52,72 148,72" fill="none" stroke="rgba(255,215,100,0.65)" stroke-width="1.5"/>
+          <circle cx="100" cy="100" r="22" fill="rgba(255,215,100,0.1)" stroke="rgba(255,215,100,0.5)" stroke-width="1"/>
+          <circle cx="100" cy="100" r="4" fill="rgba(255,215,100,0.95)"/>
+        </svg>
+      </div>
+      <h1 class="splash-title">
+        <span class="splash-title-ta">நித்யா தேவி</span>
+        <span class="splash-title-en">Nitya Devi Calculator</span>
+      </h1>
+      <p class="splash-subtitle">உங்கள் பிறந்த திதி தேவதையை அறியுங்கள்</p>
+      <p class="splash-desc">Reveal the celestial goddess who governs your lunar birth day — your personal Nitya Devi from the sacred Sri Vidya tradition.</p>
+      <a href="#calculator" class="splash-cta" id="splashCtaBtn">
+        <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+        Find My Nitya Devi
+      </a>
+      <div class="splash-scroll-hint">
+        <svg class="icon icon-stroke scroll-bounce" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
+        <span>Enter your birth details below</span>
+      </div>
+    </div>
+  </section>
 
+  <!-- LOADING OVERLAY -->
+  <div id="loadingOverlay" class="loading-overlay" aria-hidden="true">
+    <!-- Three.js 3D Animated Sacred Vectors & Celestial Particles Canvas -->
+    <canvas id="threeDeviCanvas" class="three-devi-canvas"></canvas>
+
+    <div class="loading-inner">
+      <!-- Accurate Goddess Avatar matching reference image -->
+      <div class="devi-avatar-container">
+        <svg class="devi-avatar-svg" viewBox="0 0 320 360" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <radialGradient id="avatarAura" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#ffd54f" stop-opacity="0.38"/>
+              <stop offset="60%" stop-color="#c49a45" stop-opacity="0.16"/>
+              <stop offset="100%" stop-color="#ffd54f" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="avatarHaloGlow" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity="0.96"/>
+              <stop offset="70%" stop-color="#fff9e6" stop-opacity="0.92"/>
+              <stop offset="100%" stop-color="#ffe57f" stop-opacity="0.65"/>
+            </radialGradient>
+            <linearGradient id="cloakGold" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#d49b1a"/>
+              <stop offset="45%" stop-color="#c48c14"/>
+              <stop offset="100%" stop-color="#9e6e08"/>
+            </linearGradient>
+            <linearGradient id="tunicCream" x1="0%" y1="0%" x2="0%" y2="100%">
+              <stop offset="0%" stop-color="#ffffff"/>
+              <stop offset="100%" stop-color="#fdf6dc"/>
+            </linearGradient>
+            <filter id="avatarGlow" x="-20%" y="-20%" width="140%" height="140%">
+              <feGaussianBlur stdDeviation="5" result="blur"/>
+              <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+            </filter>
+          </defs>
+
+          <!-- Outer Soft Glow Aura -->
+          <circle cx="160" cy="155" r="145" fill="url(#avatarAura)" class="avatar-aura-pulse"/>
+
+          <!-- Concentric Outer Golden Halo Rings -->
+          <circle cx="160" cy="155" r="136" fill="none" stroke="rgba(255, 225, 120, 0.45)" stroke-width="2.5" class="halo-ring-outer"/>
+          <circle cx="160" cy="155" r="122" fill="none" stroke="rgba(255, 235, 150, 0.3)" stroke-width="5" class="halo-ring-inner"/>
+
+          <!-- White Center Halo Disc -->
+          <circle cx="160" cy="155" r="106" fill="url(#avatarHaloGlow)" filter="url(#avatarGlow)"/>
+
+          <!-- 6-Pointed Star (Hexagram) in pale luminous gold behind head -->
+          <g class="avatar-star-halo">
+            <polygon points="160,56 243,200 77,200" fill="#fff9c4" fill-opacity="0.9"/>
+            <polygon points="160,248 243,104 77,104" fill="#fff9c4" fill-opacity="0.9"/>
+          </g>
+
+          <!-- ====== CLOAK / BODY ====== -->
+          <!-- Outer Cloak (golden arch robe parted at center) -->
+          <path d="M 160,192 C 114,192 92,235 92,330 L 228,330 C 228,235 206,192 160,192 Z" fill="url(#cloakGold)"/>
+
+          <!-- Inner Cream Tunic (smooth column tapering to peak beneath chin) -->
+          <path d="M 160,192 C 145,216 138,256 135,330 L 185,330 C 182,256 175,216 160,192 Z" fill="url(#tunicCream)"/>
+
+          <!-- Two Round Golden Circular Hands at waist level -->
+          <circle cx="118" cy="270" r="18" fill="#ffca28" stroke="#d49b1a" stroke-width="1.5" class="avatar-hand"/>
+          <circle cx="202" cy="270" r="18" fill="#ffca28" stroke="#d49b1a" stroke-width="1.5" class="avatar-hand"/>
+
+          <!-- ====== HEAD ====== -->
+          <circle cx="160" cy="148" r="48" fill="#fcd2b5"/>
+
+          <!-- Hairlines framing forehead (dark brown smooth arcs) -->
+          <path d="M 160,100 Q 142,118 116,140" fill="none" stroke="#23140e" stroke-width="3.2" stroke-linecap="round"/>
+          <path d="M 160,100 Q 178,118 204,140" fill="none" stroke="#23140e" stroke-width="3.2" stroke-linecap="round"/>
+
+          <!-- Crown: Golden Triangle on top of head -->
+          <polygon points="160,66 138,104 182,104" fill="#c89218"/>
+
+          <!-- Crown / Tilak: Golden circular disc directly on forehead -->
+          <circle cx="160" cy="116" r="11" fill="#c89218"/>
+
+          <!-- ====== FACE FEATURES ====== -->
+          <!-- Eyes: Two curved closed smiling eyes ⌒  ⌒ -->
+          <path d="M 136,147 Q 146,141 156,147" fill="none" stroke="#23140e" stroke-width="4.5" stroke-linecap="round"/>
+          <path d="M 164,147 Q 174,141 184,147" fill="none" stroke="#23140e" stroke-width="4.5" stroke-linecap="round"/>
+
+          <!-- Nose: Small crimson dot between eyes -->
+          <circle cx="160" cy="162" r="3.6" fill="#b71c1c"/>
+
+          <!-- Mouth: Gentle curved smile arc ◡ -->
+          <path d="M 150,173 Q 160,181 170,173" fill="none" stroke="#7b244c" stroke-width="3.6" stroke-linecap="round"/>
+        </svg>
+      </div>
+
+      <!-- Loading Status Text & Bar -->
+      <div class="loading-status-wrap">
+        <p class="loading-text">Consulting the cosmic energies…</p>
+        <p class="loading-subtext">உங்கள் திதி தேவதையை கணக்கிடுகிறோம்...</p>
+        <div class="loading-bar">
+          <div class="loading-bar-fill"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- CALCULATOR SHELL -->
+  <div class="shell" id="calculator">
     <main class="hero">
       <span class="badge">
         <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
         FREE SPIRITUAL TOOL
       </span>
-      
-      <h1>Tithi Devathai Calculator</h1>
+      <h2 class="calc-heading">Tithi Devathai Calculator</h2>
       <div class="tamil-title">உங்கள் திதி தேவதையை அறியுங்கள்</div>
-      
-      <p class="intro">
-        Enter your <strong>date of birth, exact birth time and birthplace time zone</strong>. 
-        This calculator identifies your <strong>birth Tithi, Paksha and corresponding Nitya Devi</strong>.
-      </p>
+      <p class="intro">Enter your <strong>date of birth, exact birth time and birthplace time zone</strong>. This calculator identifies your <strong>birth Tithi, Paksha and corresponding Nitya Devi</strong>.</p>
 
       <section class="section">
-        <h2>Your Birth Details</h2>
+        <h3>Your Birth Details</h3>
         <p>உங்கள் பிறந்த தேதி, நேரம் மற்றும் பிறந்த இடத்தின் நேர மண்டலத்தை உள்ளிடுங்கள்.</p>
-        
         <div class="grid">
           <div class="form-group" id="dobGroup">
             <label for="dob">Date of Birth <small>பிறந்த தேதி</small></label>
@@ -63,10 +215,8 @@
               <input id="dob" type="text" placeholder="YYYY-MM-DD" readonly required>
             </div>
             <div class="error-msg" id="dobError"></div>
-            <!-- Custom Interactive Calendar Component -->
             <div id="calendarPopover" class="calendar-popover"></div>
           </div>
-          
           <div class="form-group" id="tobGroup">
             <label for="tob">Exact Birth Time <small>சரியான பிறந்த நேரம்</small></label>
             <div class="input-wrapper" id="tobWrapper">
@@ -75,7 +225,6 @@
             </div>
             <div class="error-msg" id="tobError"></div>
           </div>
-          
           <div class="form-group full" id="placeGroup">
             <label for="place">Birthplace <small>பிறந்த இடம்</small></label>
             <div class="input-wrapper">
@@ -83,7 +232,6 @@
               <input id="place" type="text" placeholder="e.g. Chennai, Tamil Nadu, India">
             </div>
           </div>
-          
           <div class="form-group" id="tzGroup">
             <label for="tzSelectInput">Birthplace Time Zone <small>பிறந்த இடத்தின் நேர மண்டலம்</small></label>
             <div class="input-wrapper" id="tzWrapper">
@@ -93,10 +241,8 @@
               <svg class="input-suffix-icon icon icon-stroke" viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </div>
             <div class="error-msg" id="tzError"></div>
-            <!-- Custom Timezone Dropdown Component -->
             <div id="tzCustomPopover" class="tz-popover"></div>
           </div>
-          
           <div class="form-group hidden" id="customTzGroup">
             <label for="customTz">Custom Time Zone <small>தேவையானால் மட்டும்</small></label>
             <div class="input-wrapper">
@@ -114,40 +260,146 @@
           Find My Tithi Devathai
         </button>
 
+        <!-- RESULT SECTION -->
         <div id="result" class="result">
-          <div class="result-tag">
-            <svg class="icon icon-stroke" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
-            YOUR NITYA DEVI
-          </div>
-          <div id="devName" class="devi"></div>
-          <div id="devTamil" class="devi-ta"></div>
-          
-          <div class="cards">
-            <div class="card">
-              <b>
-                <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
-                Paksha
-              </b>
-              <span id="paksha"></span>
+          <div class="devi-reveal-layout">
+            <div class="devi-yantra-col">
+              <div class="devi-yantra-frame">
+                <div id="deviYantra" class="devi-yantra"></div>
+                <div class="yantra-glow" id="yantraGlow"></div>
+              </div>
             </div>
-            <div class="card">
-              <b>
-                <svg class="icon icon-stroke" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
-                Birth Tithi
-              </b>
-              <span id="tithi"></span>
-            </div>
-            <div class="card">
-              <b>
-                <svg class="icon icon-stroke" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>
-                Lunar Phase
-              </b>
-              <span id="angle"></span>
+            <div class="devi-identity-col">
+              <div class="result-tag">
+                <svg class="icon icon-stroke" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+                YOUR NITYA DEVI
+              </div>
+              <div id="devName" class="devi"></div>
+              <div id="devTamil" class="devi-ta"></div>
+              <div id="deviElement" class="devi-element"></div>
             </div>
           </div>
 
+          <div class="mantra-box" id="mantraBox">
+            <div class="mantra-header">
+              <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z"/></svg>
+              Sacred Mantra &nbsp;·&nbsp; புனித மந்திரம்
+            </div>
+            <div id="deviMantraSanskrit" class="mantra-sanskrit"></div>
+            <div id="deviMantraEn" class="mantra-english"></div>
+
+            <!-- Audio Mantra Player & 108 Japa Counter -->
+            <div class="audio-japa-player" id="audioJapaPlayer">
+              <div class="player-controls-row">
+                <button type="button" class="btn-play-mantra" id="btnPlayMantra" aria-label="Play or Pause Mantra">
+                  <span class="play-icon" id="playIcon">
+                    <svg viewBox="0 0 24 24"><polygon points="6 3 20 12 6 21 6 3" fill="currentColor"/></svg>
+                  </span>
+                  <span id="playBtnText">Listen & Chant</span>
+                </button>
+
+                <div class="soundwave" id="soundwave" aria-hidden="true">
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+                </div>
+
+                <div class="japa-target-pills" role="radiogroup" aria-label="Select Japa Rounds">
+                  <button type="button" class="target-pill" data-count="11">11x</button>
+                  <button type="button" class="target-pill" data-count="21">21x</button>
+                  <button type="button" class="target-pill active" data-count="108">108x</button>
+                </div>
+
+                <button type="button" class="btn-speed-toggle" id="btnSpeedToggle" title="Toggle Chanting Speed">
+                  <svg class="icon icon-stroke" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                  <span id="speedText">1.0x</span>
+                </button>
+              </div>
+
+              <div class="japa-counter-row">
+                <div class="japa-count-status">
+                  <span class="japa-label">ஜப எண்ணிக்கை:</span>
+                  <span class="japa-numbers"><strong id="japaCurrentCount">0</strong> / <span id="japaMaxCount">108</span></span>
+                </div>
+                <div class="japa-progress-track">
+                  <div class="japa-progress-fill" id="japaProgressFill" style="width: 0%;"></div>
+                </div>
+                <button type="button" class="btn-reset-japa" id="btnResetJapa" title="Reset Japa Count">
+                  <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"></path><polyline points="3 3 3 8 8 8"></polyline></svg>
+                  Reset
+                </button>
+              </div>
+
+              <div id="japaCompletionBanner" class="japa-completion-banner hidden"></div>
+            </div>
+          </div>
+
+          <div class="cards">
+            <div class="card">
+              <b><svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>Paksha</b>
+              <span id="paksha"></span>
+            </div>
+            <div class="card">
+              <b><svg class="icon icon-stroke" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>Birth Tithi</b>
+              <span id="tithi"></span>
+            </div>
+            <div class="card">
+              <b><svg class="icon icon-stroke" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76"></polygon></svg>Lunar Phase</b>
+              <span id="angle"></span>
+            </div>
+          </div>
           <div id="meaning" class="meaning"></div>
           <div id="sourceNote" class="note"></div>
+
+          <!-- Nitya Devi Daily Pooja & Worship Guide -->
+          <div class="pooja-guide-section" id="poojaGuideSection">
+            <div class="pooja-guide-header">
+              <div class="pooja-guide-title">
+                <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg>
+                <span>ஸ்ரீ நித்யா தேவி தினசரி பூஜை & வழிபாட்டு முறைகள்</span>
+              </div>
+              <button type="button" class="btn-download-yantra" id="btnDownloadYantra">
+                <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                பூஜை யந்திரம் பதிவிறக்கம் (HD Yantra)
+              </button>
+            </div>
+
+            <div class="pooja-cards-grid">
+              <div class="pooja-card">
+                <div class="pooja-card-icon">🌺</div>
+                <div class="pooja-card-content">
+                  <div class="pooja-card-label">உகந்த மலர் (Auspicious Flower)</div>
+                  <div class="pooja-card-value" id="poojaFlower">-</div>
+                </div>
+              </div>
+
+              <div class="pooja-card">
+                <div class="pooja-card-icon">🍯</div>
+                <div class="pooja-card-content">
+                  <div class="pooja-card-label">நைவேத்திய பிரசாதம் (Sacred Offering)</div>
+                  <div class="pooja-card-value" id="poojaNeivedyam">-</div>
+                </div>
+              </div>
+
+              <div class="pooja-card">
+                <div class="pooja-card-icon">⏰</div>
+                <div class="pooja-card-content">
+                  <div class="pooja-card-label">சிறந்த வழிபாட்டு நேரம் (Best Worship Time)</div>
+                  <div class="pooja-card-value" id="poojaTime">-</div>
+                </div>
+              </div>
+
+              <div class="pooja-card">
+                <div class="pooja-card-icon">✨</div>
+                <div class="pooja-card-content">
+                  <div class="pooja-card-label">பிரதான அருள் & பலன்கள் (Divine Blessings)</div>
+                  <div class="pooja-card-value" id="poojaBlessings">-</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -157,13 +409,7 @@
           View the Nitya Devi mapping used in this calculator
         </summary>
         <table>
-          <thead>
-            <tr>
-              <th>Tithi</th>
-              <th>Krishna Paksha</th>
-              <th>Shukla Paksha</th>
-            </tr>
-          </thead>
+          <thead><tr><th>Tithi</th><th>Krishna Paksha</th><th>Shukla Paksha</th></tr></thead>
           <tbody id="mapTable"></tbody>
         </table>
       </details>
@@ -172,7 +418,7 @@
         <svg class="icon icon-stroke" viewBox="0 0 24 24"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
         <div>
           <strong>Share this free calculator with your family and friends.</strong><br>
-          இந்த இலவச calculator-ஐ உங்கள் குடும்பத்தினர் மற்றும் நண்பர்களுடன் பகிரலாம்.
+          இந்த இலவச calculator-ை உங்கள் குடும்பத்தினர் மற்றும் நண்பர்களுடன் பகிரலாம்.
         </div>
       </div>
 
@@ -186,5 +432,6 @@
       </footer>
     </main>
   </div>
+
 </body>
 </html>

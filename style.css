@@ -130,35 +130,14 @@ body {
   stroke-linejoin: round;
 }
 
-.shell {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 24px 20px 60px;
-}
-
-/* Header & Brand with Theme Toggle */
-.header-bar {
+/* Fixed Global Theme Bar & Toggle Button */
+.global-theme-bar {
+  position: fixed;
+  top: 18px;
+  right: 24px;
+  z-index: 999;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  margin-bottom: 24px;
-  gap: 16px;
-}
-
-.brand-mark {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-family: var(--font-heading);
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  color: var(--purple-dark);
-  font-size: 13px;
-  text-transform: uppercase;
-  background: var(--purple-light);
-  padding: 8px 18px;
-  border-radius: 999px;
-  border: 1px solid var(--line-border);
 }
 
 .theme-toggle-btn {
@@ -166,22 +145,30 @@ body {
   align-items: center;
   gap: 8px;
   background: var(--card-bg);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border: 1px solid var(--line-border);
   color: var(--ink-primary);
-  padding: 8px 16px;
+  padding: 9px 18px;
   border-radius: 999px;
   font-family: var(--font-body);
   font-size: 13px;
   font-weight: 600;
   cursor: pointer;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  transition: all 0.2s ease;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .theme-toggle-btn:hover {
   border-color: var(--purple-primary);
-  box-shadow: 0 6px 16px var(--purple-glow);
-  transform: translateY(-1px);
+  box-shadow: 0 8px 24px var(--purple-glow);
+  transform: translateY(-2px);
+}
+
+.shell {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 44px 20px 70px;
 }
 
 /* Main Card Container */
@@ -955,6 +942,1094 @@ tr:last-child td {
   
   th, td {
     padding: 8px 6px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   FIX: calc-heading acts like h1 visually
+══════════════════════════════════════════════════════ */
+.calc-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(28px, 5vw, 46px);
+  line-height: 1.1;
+  color: var(--purple-dark);
+  margin-bottom: 6px;
+  font-weight: 700;
+}
+
+.section h3 {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  color: var(--purple-dark);
+  margin-bottom: 4px;
+}
+
+/* ═══════════════════════════════════════════════════════
+   HERO SPLASH SECTION
+══════════════════════════════════════════════════════ */
+.splash-hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(135deg, #0a0614 0%, #170a2a 40%, #0d1a12 100%);
+}
+
+/* Goddess image as background */
+.splash-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: url('hero_goddess.jpg');
+  background-size: cover;
+  background-position: center top;
+  opacity: 0.35;
+  z-index: 0;
+}
+
+/* Dark gradient overlay */
+.splash-hero::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center top, rgba(92,35,150,0.25) 0%, rgba(10,6,20,0.7) 70%),
+              linear-gradient(to bottom, transparent 40%, rgba(10,6,20,0.95) 100%);
+  z-index: 1;
+}
+
+/* Floating particles */
+.splash-particles {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255,215,100,0.6) 0%, transparent 70%);
+  animation: floatUp 8s ease-in-out infinite;
+}
+
+.p1 { width: 6px; height: 6px; left: 15%; top: 80%; animation-delay: 0s; animation-duration: 9s; }
+.p2 { width: 4px; height: 4px; left: 35%; top: 85%; animation-delay: 1.5s; animation-duration: 7s; }
+.p3 { width: 8px; height: 8px; left: 55%; top: 75%; animation-delay: 3s; animation-duration: 11s; }
+.p4 { width: 5px; height: 5px; left: 70%; top: 88%; animation-delay: 0.8s; animation-duration: 8s; }
+.p5 { width: 3px; height: 3px; left: 85%; top: 78%; animation-delay: 2.5s; animation-duration: 10s; }
+.p6 { width: 7px; height: 7px; left: 25%; top: 90%; animation-delay: 4s; animation-duration: 6s; }
+
+@keyframes floatUp {
+  0% { transform: translateY(0) scale(1); opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 0.6; }
+  100% { transform: translateY(-90vh) scale(0.5); opacity: 0; }
+}
+
+/* Hero Splash always retains its signature cosmic dark theme */
+
+/* Splash Inner Content */
+.splash-inner {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 40px 24px;
+  max-width: 700px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.splash-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  color: rgba(255, 215, 100, 0.9);
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 215, 100, 0.3);
+  padding: 8px 20px;
+  border-radius: 999px;
+  background: rgba(255, 215, 100, 0.08);
+  backdrop-filter: blur(8px);
+}
+
+/* Spinning Yantra */
+.splash-yantra-wrap {
+  position: relative;
+  width: 180px;
+  height: 180px;
+  margin: 8px auto;
+}
+
+.splash-yantra {
+  width: 100%;
+  height: 100%;
+  animation: yantaSpin 30s linear infinite;
+  filter: drop-shadow(0 0 18px rgba(255,215,100,0.5));
+}
+
+@keyframes yantaSpin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.splash-title {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-family: var(--font-heading);
+  font-weight: 800;
+}
+
+.splash-title-ta {
+  font-size: clamp(32px, 7vw, 56px);
+  background: linear-gradient(135deg, #ffd764 0%, #ffaa44 50%, #ff8fd4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.1;
+  letter-spacing: 0.02em;
+}
+
+.splash-title-en {
+  font-size: clamp(18px, 3.5vw, 28px);
+  color: rgba(255, 255, 255, 0.75);
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.splash-subtitle {
+  font-size: clamp(15px, 2.5vw, 19px);
+  color: rgba(255, 215, 100, 0.85);
+  font-weight: 600;
+  margin: 0;
+}
+
+.splash-desc {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.7;
+  max-width: 540px;
+  margin: 0;
+}
+
+/* CTA Button */
+.splash-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+  padding: 16px 36px;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 700;
+  text-decoration: none;
+  color: #1a0a2e;
+  background: linear-gradient(135deg, #ffd764 0%, #ffb940 60%, #ff8fd4 100%);
+  box-shadow: 0 8px 32px rgba(255,185,64,0.4), 0 0 0 0 rgba(255,185,64,0.4);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  animation: ctaPulse 3s ease-in-out infinite;
+}
+
+.splash-cta:hover {
+  transform: translateY(-3px) scale(1.04);
+  box-shadow: 0 16px 48px rgba(255,185,64,0.55), 0 0 0 8px rgba(255,185,64,0.15);
+  animation: none;
+}
+
+@keyframes ctaPulse {
+  0%, 100% { box-shadow: 0 8px 32px rgba(255,185,64,0.4), 0 0 0 0 rgba(255,185,64,0.3); }
+  50% { box-shadow: 0 8px 32px rgba(255,185,64,0.5), 0 0 0 12px rgba(255,185,64,0.05); }
+}
+
+/* Scroll hint */
+.splash-scroll-hint {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  color: rgba(255, 255, 255, 0.45);
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-top: 8px;
+}
+
+.scroll-bounce {
+  width: 24px;
+  height: 24px;
+  animation: scrollBounce 2s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(8px); }
+}
+
+/* ═══════════════════════════════════════════════════════
+   LOADING OVERLAY & THREE.JS 3D CANVAS
+══════════════════════════════════════════════════════ */
+.loading-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: radial-gradient(circle at center, rgba(32, 12, 54, 0.94) 0%, rgba(10, 4, 18, 0.98) 100%);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+  overflow: hidden;
+}
+
+.loading-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* Three.js 3D Canvas Background Layer */
+.three-devi-canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.loading-inner {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  max-width: 90vw;
+}
+
+/* ——— Goddess Avatar Container & Floating Animation ——— */
+.devi-avatar-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: avatarFloat 3.2s ease-in-out infinite;
+  filter: drop-shadow(0 0 28px rgba(255, 215, 100, 0.45))
+          drop-shadow(0 0 50px rgba(147, 51, 234, 0.35));
+}
+
+.devi-avatar-svg {
+  width: 330px;
+  height: 370px;
+  max-width: 85vw;
+  max-height: 52vh;
+  overflow: visible;
+  filter: drop-shadow(0 6px 24px rgba(0, 0, 0, 0.45));
+}
+
+@keyframes avatarFloat {
+  0%, 100% {
+    transform: translateY(0px) scale(1);
+  }
+  50% {
+    transform: translateY(-14px) scale(1.02);
+  }
+}
+
+/* ——— Avatar Internal SVG Animations ——— */
+.avatar-aura-pulse {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: auraPulse 3.5s ease-in-out infinite;
+}
+
+@keyframes auraPulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.06);
+  }
+}
+
+.avatar-star-halo {
+  transform-box: fill-box;
+  transform-origin: center center;
+  animation: starHaloGlow 3.5s ease-in-out infinite alternate;
+}
+
+@keyframes starHaloGlow {
+  0% {
+    transform: scale(0.98);
+    opacity: 0.85;
+  }
+  100% {
+    transform: scale(1.04);
+    opacity: 1;
+  }
+}
+
+.halo-ring-outer {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: ringSlowPulse 4s ease-in-out infinite;
+}
+
+@keyframes ringSlowPulse {
+  0%, 100% {
+    stroke-opacity: 0.4;
+    transform: scale(1);
+  }
+  50% {
+    stroke-opacity: 0.85;
+    transform: scale(1.02);
+  }
+}
+
+.avatar-hand {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: handGentlyBreathe 2.4s ease-in-out infinite alternate;
+}
+
+@keyframes handGentlyBreathe {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-2px);
+  }
+}
+
+/* ——— Status Wrap & Text ——— */
+.loading-status-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.loading-text {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 700;
+  color: #ffd764;
+  letter-spacing: 0.05em;
+  margin: 0;
+  animation: textGlow 2s ease-in-out infinite;
+}
+
+.loading-subtext {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+}
+
+@keyframes textGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(255, 215, 100, 0.4);
+  }
+  50% {
+    text-shadow: 0 0 24px rgba(255, 215, 100, 0.95), 0 0 40px rgba(233, 30, 140, 0.45);
+  }
+}
+
+/* Light Theme Overrides for Loading Overlay */
+[data-theme="light"] .loading-overlay {
+  background: radial-gradient(circle at center, rgba(254, 250, 244, 0.94) 0%, rgba(242, 232, 248, 0.97) 100%);
+}
+
+[data-theme="light"] .loading-text {
+  color: #3b1959;
+  text-shadow: 0 0 14px rgba(184, 134, 11, 0.4);
+}
+
+[data-theme="light"] .loading-subtext {
+  color: #63437a;
+  font-weight: 600;
+}
+
+[data-theme="light"] .loading-bar {
+  background: rgba(92, 53, 119, 0.16);
+  box-shadow: 0 0 10px rgba(92, 53, 119, 0.08);
+}
+
+[data-theme="light"] .loading-bar-fill {
+  background: linear-gradient(90deg, #b8860b, #c026d3, #b8860b);
+}
+
+/* Cosmic Animated Progress Bar */
+.loading-bar {
+  width: 220px;
+  height: 4px;
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: 6px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.loading-bar-fill {
+  height: 100%;
+  width: 45%;
+  background: linear-gradient(90deg, #ffd764, #e91e8c, #ffd764);
+  background-size: 200% 100%;
+  border-radius: 4px;
+  animation: loadingBarSlide 1.5s ease-in-out infinite;
+}
+
+@keyframes loadingBarSlide {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(300%);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   DEVI RESULT — YANTRA + IDENTITY LAYOUT
+══════════════════════════════════════════════════════ */
+.devi-reveal-layout {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 28px;
+  flex-wrap: wrap;
+}
+
+/* Yantra Column */
+.devi-yantra-col {
+  flex-shrink: 0;
+}
+
+.devi-yantra-frame {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.devi-yantra {
+  width: 180px;
+  height: 180px;
+  border-radius: 50%;
+  position: relative;
+  z-index: 1;
+  animation: deviReveal 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards,
+             deviRotate 20s linear infinite 0.8s;
+  transform-origin: center;
+}
+
+.devi-yantra svg {
+  width: 100%;
+  height: 100%;
+}
+
+.yantra-glow {
+  position: absolute;
+  inset: -20px;
+  border-radius: 50%;
+  animation: glowPulse 3s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes deviReveal {
+  from { transform: scale(0) rotate(-180deg); opacity: 0; }
+  to { transform: scale(1) rotate(0deg); opacity: 1; }
+}
+
+@keyframes deviRotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+@keyframes glowPulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.9; transform: scale(1.05); }
+}
+
+/* Identity Column */
+.devi-identity-col {
+  flex: 1;
+  min-width: 220px;
+}
+
+.devi-element {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--ink-muted);
+  margin-top: 8px;
+  letter-spacing: 0.03em;
+}
+
+/* ═══════════════════════════════════════════════════════
+   MANTRA BOX
+══════════════════════════════════════════════════════ */
+.mantra-box {
+  margin-bottom: 24px;
+  padding: 24px 28px;
+  border-radius: var(--radius-lg);
+  background: linear-gradient(135deg, var(--purple-light) 0%, var(--gold-light) 100%);
+  border: 1px solid var(--line-border);
+  box-shadow: 0 4px 16px rgba(50, 30, 65, 0.04);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.mantra-box::before {
+  content: '';
+  position: absolute;
+  top: -40%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(196,154,69,0.12) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.mantra-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  color: var(--gold-accent);
+  margin-bottom: 16px;
+  text-transform: uppercase;
+}
+
+.mantra-sanskrit {
+  font-family: 'Noto Serif Devanagari', 'Noto Serif', serif;
+  font-size: clamp(18px, 3.5vw, 26px);
+  font-weight: 600;
+  color: var(--purple-dark);
+  line-height: 1.5;
+  margin-bottom: 10px;
+  letter-spacing: 0.02em;
+}
+
+.mantra-english {
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ink-muted);
+  letter-spacing: 0.06em;
+  font-style: italic;
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESULT SECTION — animated entry
+══════════════════════════════════════════════════════ */
+.result {
+  animation: resultSlideIn 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes resultSlideIn {
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE — Splash & Devi Layout
+══════════════════════════════════════════════════════ */
+@media (max-width: 640px) {
+  .splash-yantra-wrap {
+    width: 140px;
+    height: 140px;
+  }
+
+  .splash-brand {
+    font-size: 11px;
+    letter-spacing: 0.12em;
+    padding: 6px 14px;
+  }
+
+  .splash-cta {
+    padding: 14px 28px;
+    font-size: 15px;
+  }
+
+  .devi-reveal-layout {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 20px;
+  }
+
+  .devi-identity-col {
+    text-align: center;
+  }
+
+  .devi-yantra-frame {
+    width: 160px;
+    height: 160px;
+  }
+
+  .devi-yantra {
+    width: 140px;
+    height: 140px;
+  }
+
+  .mantra-box {
+    padding: 18px 16px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════
+   AUDIO MANTRA PLAYER & 108 JAPA COUNTER
+══════════════════════════════════════════════════════ */
+.audio-japa-player {
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px dashed rgba(196, 154, 69, 0.35);
+}
+
+.player-controls-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn-play-mantra {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 22px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #c49a45 0%, #e6be64 100%);
+  color: #170e22;
+  font-family: var(--font-body);
+  font-size: 14px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(196, 154, 69, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.btn-play-mantra:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(196, 154, 69, 0.35);
+  background: linear-gradient(135deg, #dfb455 0%, #ffd764 100%);
+}
+
+.btn-play-mantra:active {
+  transform: translateY(0);
+}
+
+.play-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.play-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Soundwave equalizer */
+.soundwave {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  height: 22px;
+  padding: 0 4px;
+}
+
+.soundwave .bar {
+  width: 3px;
+  height: 5px;
+  background: var(--gold-accent);
+  border-radius: 2px;
+  transition: height 0.2s ease;
+}
+
+.soundwave.playing .bar {
+  animation: soundwaveBounce 0.9s ease-in-out infinite alternate;
+}
+
+.soundwave.playing .bar:nth-child(1) { animation-delay: 0.0s; }
+.soundwave.playing .bar:nth-child(2) { animation-delay: 0.25s; }
+.soundwave.playing .bar:nth-child(3) { animation-delay: 0.1s; }
+.soundwave.playing .bar:nth-child(4) { animation-delay: 0.35s; }
+.soundwave.playing .bar:nth-child(5) { animation-delay: 0.18s; }
+
+@keyframes soundwaveBounce {
+  0% { height: 4px; }
+  50% { height: 20px; }
+  100% { height: 8px; }
+}
+
+/* Japa target pills (11x, 21x, 108x) */
+.japa-target-pills {
+  display: inline-flex;
+  gap: 4px;
+  background: rgba(196, 154, 69, 0.08);
+  padding: 4px;
+  border-radius: 999px;
+  border: 1px solid var(--line-border);
+}
+
+.target-pill {
+  padding: 5px 12px;
+  font-size: 12px;
+  font-weight: 700;
+  border-radius: 999px;
+  border: none;
+  background: transparent;
+  color: var(--ink-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.target-pill:hover {
+  color: var(--ink-primary);
+}
+
+.target-pill.active {
+  background: var(--purple-primary);
+  color: #ffffff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.12);
+}
+
+/* Speed toggle */
+.btn-speed-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 600;
+  border-radius: 999px;
+  border: 1px solid var(--line-border);
+  background: var(--card-bg);
+  color: var(--ink-primary);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.btn-speed-toggle:hover {
+  border-color: var(--gold-accent);
+  color: var(--gold-accent);
+}
+
+/* Counter progress row */
+.japa-counter-row {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  background: rgba(196, 154, 69, 0.07);
+  padding: 10px 16px;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(196, 154, 69, 0.2);
+}
+
+.japa-count-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--ink-primary);
+  white-space: nowrap;
+}
+
+.japa-label {
+  font-weight: 600;
+  color: var(--ink-muted);
+}
+
+.japa-numbers strong {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  color: var(--gold-accent);
+  margin-right: 2px;
+}
+
+.japa-progress-track {
+  flex: 1;
+  min-width: 80px;
+  height: 8px;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+[data-theme="dark"] .japa-progress-track {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.japa-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #c49a45 0%, #ffd764 100%);
+  border-radius: 999px;
+  transition: width 0.3s ease;
+}
+
+.btn-reset-japa {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 11px;
+  font-size: 11px;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--line-border);
+  background: var(--card-bg);
+  color: var(--ink-muted);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-reset-japa:hover {
+  border-color: var(--error-color);
+  color: var(--error-color);
+}
+
+/* Completion Banner */
+.japa-completion-banner {
+  margin-top: 14px;
+  padding: 12px 18px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, rgba(45, 115, 86, 0.22) 0%, rgba(196, 154, 69, 0.22) 100%);
+  border: 1px solid rgba(196, 154, 69, 0.5);
+  color: var(--ink-primary);
+  font-weight: 700;
+  font-size: 14px;
+  text-align: center;
+  animation: bannerFadeUp 0.4s ease forwards;
+}
+
+.japa-completion-banner.hidden {
+  display: none;
+}
+
+@keyframes bannerFadeUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ═══════════════════════════════════════════════════════
+   DEVI POOJA & WORSHIP GUIDE
+══════════════════════════════════════════════════════ */
+.pooja-guide-section {
+  margin-top: 32px;
+  padding: 26px 28px;
+  border-radius: var(--radius-lg);
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  box-shadow: 0 4px 16px rgba(50, 30, 65, 0.04);
+  position: relative;
+  overflow: hidden;
+}
+
+.pooja-guide-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #5c3577 0%, #c49a45 50%, #2d7356 100%);
+}
+
+.pooja-guide-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.pooja-guide-title {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-heading);
+  font-size: clamp(16px, 2.6vw, 19px);
+  font-weight: 700;
+  color: var(--purple-dark);
+  line-height: 1.4;
+}
+
+.pooja-guide-title svg {
+  color: var(--gold-accent);
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+}
+
+.btn-download-yantra {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #c49a45 0%, #e6be64 100%);
+  color: #1a0f26;
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(196, 154, 69, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  white-space: nowrap;
+}
+
+.btn-download-yantra:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(196, 154, 69, 0.35);
+  background: linear-gradient(135deg, #dfb455 0%, #ffd764 100%);
+}
+
+.btn-download-yantra:active {
+  transform: translateY(0);
+}
+
+.btn-download-yantra svg {
+  width: 16px;
+  height: 16px;
+}
+
+.pooja-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.pooja-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 18px 20px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--purple-light) 0%, var(--gold-light) 100%);
+  border: 1px solid var(--line-border);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pooja-card:hover {
+  transform: translateY(-3px);
+  border-color: rgba(196, 154, 69, 0.4);
+  box-shadow: 0 4px 12px rgba(50, 30, 65, 0.06);
+}
+
+.pooja-card-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--card-bg);
+  border: 1px solid var(--line-border);
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.04);
+}
+
+.pooja-card-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.pooja-card-label {
+  font-size: 11.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--gold-accent);
+  margin-bottom: 5px;
+}
+
+.pooja-card-value {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--ink-primary);
+  word-break: break-word;
+}
+
+/* ═══════════════════════════════════════════════════════
+   RESPONSIVE — Audio Player & Pooja Guide
+══════════════════════════════════════════════════════ */
+@media (max-width: 640px) {
+  .pooja-cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .pooja-guide-header {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .pooja-guide-title {
+    justify-content: center;
+  }
+
+  .btn-download-yantra {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .player-controls-row {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .btn-play-mantra {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .japa-counter-row {
+    flex-direction: column;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .japa-count-status {
+    justify-content: space-between;
+  }
+
+  .btn-reset-japa {
+    align-self: flex-end;
   }
 }
 
