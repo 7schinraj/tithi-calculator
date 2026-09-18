@@ -935,7 +935,7 @@ function renderDeviResult(devi, num, isShukla, phase) {
   document.getElementById("meaning").innerHTML = `<strong>Simple meaning:</strong> ${meanings[deviName] || ""}`;
   document.getElementById("sourceNote").innerHTML = num === 15
     ? "<strong>Tradition note:</strong> This calculator follows a mapping in which Poornima/Amavasya are assigned to Maha Tripura Sundari. Other Sri Vidya lineages may present the 15th association differently."
-    : "<strong>Tradition note:</strong> This result follows the Krishna/Shukla Paksha Nitya Devi mapping used in this calculator.";
+    : "<strong>Tradition note:</strong> This result follows the Krishna/Shukla Paksha Tithi Devathai mapping used in this calculator.";
 
   // Update Pooja & Worship Guide details
   const flowerEl = document.getElementById("poojaFlower");
@@ -1306,7 +1306,7 @@ function downloadPoojaYantra() {
       // Sacred Mantra section below Yantra
       ctx.font = "bold 22px Cinzel, serif";
       ctx.fillStyle = "#c49a45";
-      ctx.fillText("SACRED NITYA DEVI MANTRA", 600, 1040);
+      ctx.fillText("SACRED TITHI DEVATHAI MANTRA", 600, 1040);
 
       ctx.font = "bold 32px 'Noto Serif Devanagari', serif";
       ctx.fillStyle = "#ffffff";
@@ -1582,7 +1582,7 @@ function hideLoadingOverlay() {
 }
 
 /**
- * Initialize Nitya Devi reference mapping table
+ * Initialize Tithi Devathai reference mapping table
  */
 function initMappingTable() {
   const mapTable = document.getElementById("mapTable");
