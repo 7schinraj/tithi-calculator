@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ta-IN" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Birth Tithi Devathai Result | REKHA THE TAROT QUEEN</title>
+  <meta name="description" content="Your detailed astronomical Tithi Devathai calculation result with sacred mantras, offerings, auspicious worship times, and 108 Japa player in English and Tamil.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Mukta+Malar:wght@400;500;600;700;800&family=Noto+Serif+Devanagari:wght@500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- CSS Styles -->
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Astronomical & Timezone Libraries -->
+  <script src="https://cdn.jsdelivr.net/npm/luxon@3.4.4/build/global/luxon.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/astronomy.browser.min.js"></script>
+</head>
+<body class="result-page-body">
+
+  <!-- Celestial Floating Stardust Particles (Matching Hero Section) -->
+  <div class="splash-particles">
+    <div class="particle p1"></div>
+    <div class="particle p2"></div>
+    <div class="particle p3"></div>
+    <div class="particle p4"></div>
+    <div class="particle p5"></div>
+    <div class="particle p6"></div>
+  </div>
+
+  <!-- TOP HEADER NAV BAR -->
+  <header class="header">
+    <div class="header-container">
+      <a href="index.html" class="brand-logo" aria-label="Rekha The Tarot Queen Home">
+        <svg class="icon icon-stroke brand-sparkle" viewBox="0 0 24 24">
+          <path d="m12 3-1.912 5.813a2 2 0 0 1-1.275 1.275L3 12l5.813 1.912a2 2 0 0 1 1.275 1.275L12 21l1.912-5.813a2 2 0 0 1 1.275-1.275L21 12l-5.813-1.912a2 2 0 0 1-1.275-1.275L12 3Z" />
+        </svg>
+        <span>REKHA THE TAROT QUEEN</span>
+      </a>
+
+      <div class="header-actions">
+        <a href="index.html" class="btn-back-nav" id="btnBackNav" aria-label="Recalculate Tithi">
+          <svg class="icon icon-stroke" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          <span class="nav-text-desktop">Recalculate / மீண்டும்</span>
+          <span class="nav-text-tablet">Recalculate</span>
+          <span class="nav-text-mobile">Back</span>
+        </a>
+
+        <button id="themeToggle" class="btn-theme-toggle" aria-label="Toggle Dark/Light Mode">
+          <svg class="icon icon-stroke" viewBox="0 0 24 24"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="12" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          <span class="theme-toggle-text">Light Mode</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN RESULT CONTAINER -->
+  <main class="result-main-wrapper">
+    <div class="container">
+
+      <!-- BREADCRUMB & QUICK ACTION LINK -->
+      <div class="result-top-bar">
+        <a href="index.html" class="back-link">
+          <svg class="icon icon-stroke" viewBox="0 0 24 24"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+          <span class="back-text-desktop">Back to Calculator Form / மீண்டும் பிறந்த விவரங்கள் மாற்ற</span>
+          <span class="back-text-mobile">Back to Calculator Form</span>
+        </a>
+        <div class="result-timestamp-badge" id="reportDateBadge">
+          <span>ASTRONOMICAL CALCULATION REPORT</span>
+        </div>
+      </div>
+
+      <!-- USER BIRTH SUMMARY CHIP BAR -->
+      <section class="user-summary-card">
+        <div class="user-summary-header">
+          <svg class="icon icon-stroke summary-star-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          <h3>Calculated Birth Parameters / கணக்கிடப்பட்ட பிறந்த விவரங்கள்</h3>
+        </div>
+        <div class="summary-chips-grid">
+          <div class="summary-chip">
+            <span class="chip-label">Date of Birth / பிறந்த தேதி</span>
+            <strong class="chip-val" id="resDob">1995-10-15</strong>
+          </div>
+          <div class="summary-chip">
+            <span class="chip-label">Birth Time / பிறந்த நேரம்</span>
+            <strong class="chip-val" id="resTob">08:30 AM</strong>
+          </div>
+          <div class="summary-chip">
+            <span class="chip-label">Birthplace / இடம்</span>
+            <strong class="chip-val" id="resPlace">Chennai, Tamil Nadu, India</strong>
+          </div>
+          <div class="summary-chip">
+            <span class="chip-label">Timezone / நேர மண்டலம்</span>
+            <strong class="chip-val" id="resTz">Asia/Kolkata (IST)</strong>
+          </div>
+        </div>
+      </section>
+
+      <!-- HERO GODDESS SHOWCASE SPOTLIGHT CARD -->
+      <section class="devi-spotlight-hero" id="deviSpotlightHero">
+        <div class="devi-spotlight-inner">
+          
+          <!-- LEFT: Goddess Photo / Yantra Showcase -->
+          <div class="spotlight-visual-col">
+            <div class="spotlight-photo-frame" id="spotlightPhotoFrame">
+              <img id="resDeviImage" src="hero_goddess.jpg" alt="Devi Portrait" class="spotlight-devi-img">
+              <div class="spotlight-photo-glow" id="spotlightGlow"></div>
+            </div>
+          </div>
+
+          <!-- RIGHT: Goddess Title & Celestial Alignments -->
+          <div class="spotlight-info-col">
+            <div class="result-badge-tag">
+              <svg class="icon icon-stroke" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+              <span>YOUR BIRTH TITHI DEVATHAI / உங்கள் பிறந்த திதி தேவதை</span>
+            </div>
+
+            <h1 class="res-devi-title" id="resDeviName">Kameshvari Nitya</h1>
+            <h2 class="res-devi-tamil-title" id="resDeviTamil">ஸ்ரீ காமேஸ்வரி நித்யா</h2>
+
+            <div class="res-element-badge" id="resDeviElement">
+              🌺 Divine Desire, Attraction & Auspicious Beginnings
+            </div>
+
+            <!-- Astronomy Badges Grid -->
+            <div class="astronomy-badges-row">
+              <div class="astro-badge">
+                <span class="badge-title">Tithi / திதி</span>
+                <strong class="badge-value" id="resTithiName">1. Pratipada / பிரதமை</strong>
+              </div>
+              <div class="astro-badge">
+                <span class="badge-title">Paksha / பக்ஷம்</span>
+                <strong class="badge-value" id="resPaksha">Shukla Paksha / வளர்பிறை</strong>
+              </div>
+              <div class="astro-badge">
+                <span class="badge-title">Moon Phase / சந்திர பாகை</span>
+                <strong class="badge-value" id="resAngle">11.45°</strong>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- DETAILED REPORT SECTIONS (DUAL COLUMN BILINGUAL GRID) -->
+      <div class="report-grid-layout">
+
+        <!-- COLUMN 1: SPIRITUAL SIGNIFICANCE & WORSHIP ATTRIBUTES -->
+        <div class="report-col">
+          
+          <!-- CARD 1: MEANING & SIGNIFICANCE -->
+          <div class="report-card">
+            <div class="card-head">
+              <div class="card-icon-box">📜</div>
+              <div>
+                <h3 class="card-title-en">Divine Significance & Meaning</h3>
+                <span class="card-title-ta">தேவியின் தெய்வீக தத்துவம் & விளக்கம்</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="bilingual-text-box">
+                <div class="lang-en">
+                  <strong>English Meaning:</strong>
+                  <p id="resMeaningEn">Associated with divine desire, attraction, fulfilment and auspicious beginnings.</p>
+                </div>
+                <div class="lang-ta">
+                  <strong>தமிழ் விளக்கம்:</strong>
+                  <p id="resMeaningTa">இறை விருப்பம், ஈர்ப்பு சக்தி, புதிய சுப காரியங்களின் தொடக்கம் மற்றும் ஆசைகள் நிறைவேறும் தெய்வீக ஆற்றல் கொண்ட தேவி.</p>
+                </div>
+              </div>
+              <div class="tradition-note-box" id="resSourceNote">
+                <strong>Tradition note:</strong> Follows the sacred Sri Vidya Nitya Devathai Panchangam calculation.
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 2: WORSHIP ATTRIBUTES & BENEVOLENT BLESSINGS -->
+          <div class="report-card">
+            <div class="card-head">
+              <div class="card-icon-box">📿</div>
+              <div>
+                <h3 class="card-title-en">Pooja Items & Divine Blessings</h3>
+                <span class="card-title-ta">வழிபாட்டு பொருட்கள் & அருளும் சுப பலன்கள்</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="attr-grid">
+                
+                <div class="attr-item">
+                  <div class="attr-icon">🌺</div>
+                  <div class="attr-content">
+                    <span class="attr-label">Sacred Flowers / உகந்த மலர்கள்</span>
+                    <strong class="attr-val" id="resFlower">செம்பருத்தி (Red Hibiscus) & ரோஜா (Rose)</strong>
+                  </div>
+                </div>
+
+                <div class="attr-item">
+                  <div class="attr-icon">🍯</div>
+                  <div class="attr-content">
+                    <span class="attr-label">Naivedyam / பிரசாதம்</span>
+                    <strong class="attr-val" id="resNeivedyam">கற்கண்டு பால் & மாதுளை பழம்</strong>
+                  </div>
+                </div>
+
+                <div class="attr-item">
+                  <div class="attr-icon">⏰</div>
+                  <div class="attr-content">
+                    <span class="attr-label">Best Time / சிறந்த வழிபாட்டு நேரம்</span>
+                    <strong class="attr-val" id="resBestTime">வெள்ளிக்கிழமை சுக்ர ஹோரை (6-7 AM / 8-9 PM)</strong>
+                  </div>
+                </div>
+
+                <div class="attr-item highlight">
+                  <div class="attr-icon">✨</div>
+                  <div class="attr-content">
+                    <span class="attr-label">Divine Blessings / தேவி அருளும் சுப பலன்கள்</span>
+                    <strong class="attr-val" id="resBlessings">அன்பு, ஈர்ப்பு சக்தி, திருமண வரன் கூடுதல், இல்லற தாம்பத்ய இன்பம்</strong>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- CARD 3: STEP-BY-STEP DAILY POOJA RITUAL GUIDE -->
+          <div class="report-card">
+            <div class="card-head">
+              <div class="card-icon-box">🕯️</div>
+              <div>
+                <h3 class="card-title-en">Step-by-Step Daily Pooja Ritual</h3>
+                <span class="card-title-ta">தினசரி எளிய பூஜை வழிமுறைகள்</span>
+              </div>
+            </div>
+            <div class="card-body">
+              <div class="pooja-steps-list">
+                
+                <div class="pooja-step-item">
+                  <div class="step-num">1</div>
+                  <div class="step-desc">
+                    <strong>Cleanliness & Lighting Lamp / தூய்மை & விளக்கேற்றுதல்</strong>
+                    <p>Clean your pooja room, light a brass Ghee or Sesame oil lamp facing East or North for divine illumination.</p>
+                    <small>பூஜை இடத்தை தூய்மை செய்து, கிழக்கு அல்லது வடக்கு நோக்கி நெய் அல்லது நல்லெண்ணெய் தீபம் ஏற்றவும்.</small>
+                  </div>
+                </div>
+
+                <div class="pooja-step-item">
+                  <div class="step-num">2</div>
+                  <div class="step-desc">
+                    <strong>Offer Flowers & Naivedyam / மலர் & நைவேத்திய சமர்ப்பணம்</strong>
+                    <p>Place fresh flowers and the prescribed sacred food offering (Naivedyam) before the Devi portrait or Sri Yantra.</p>
+                    <small>தேவியின் திருவுருவப்படம் அல்லது யந்திரத்திற்கு உகந்த மலர்கள் மற்றும் நைவேத்தியத்தை பக்தியுடன் சமர்ப்பிக்கவும்.</small>
+                  </div>
+                </div>
+
+                <div class="pooja-step-item">
+                  <div class="step-num">3</div>
+                  <div class="step-desc">
+                    <strong>108 Times Mantra Chanting / 108 முறை மூல மந்திர ஜபம்</strong>
+                    <p>Chant the sacred Moola Mantra 108 times using a Rudraksha or Sphatika mala with deep devotion and focus.</p>
+                    <small>உருத்திராட்சம் அல்லது ஸ்படிக மாலை கொண்டு 108 முறை மூல மந்திரத்தை ஒருமுகப்பட்ட மனதுடன் ஜபிக்கவும்.</small>
+                  </div>
+                </div>
+
+                <div class="pooja-step-item">
+                  <div class="step-num">4</div>
+                  <div class="step-desc">
+                    <strong>Meditation & Deep Gratitude / தியானம் & பிராத்தனை</strong>
+                    <p>Meditate silently for 5 minutes contemplating on Goddess grace and pray for health, prosperity & peace.</p>
+                    <small>5 நிமிடங்கள் அமைதியாக தியானித்து தேவியின் அருளை வேண்டி குடும்ப சௌபாக்கியத்திற்கு பிராத்திக்கவும்.</small>
+                  </div>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+
+        <!-- COLUMN 2: SACRED MANTRAS & INTERACTIVE 108 JAPA & YANTRA -->
+        <div class="report-col">
+
+          <!-- CARD 4: SACRED MOOLA MANTRA & 108 JAPA AUDIO COUNTER -->
+          <div class="report-card mantra-japa-card">
+            <div class="card-head">
+              <div class="card-icon-box">🕉️</div>
+              <div>
+                <h3 class="card-title-en">Sacred Moola Mantra & 108 Japa</h3>
+                <span class="card-title-ta">தேவி மூல மந்திரம் & 108 ஜப கருவி</span>
+              </div>
+            </div>
+            <div class="card-body">
+              
+              <!-- Mantra Scripts Container -->
+              <div class="mantra-scripts-box">
+                <div class="mantra-script-sanskrit">
+                  <span class="script-label">Sanskrit / சமஸ்கிருதம்:</span>
+                  <div id="resMantraSanskrit" class="sanskrit-text">ॐ ऐं ह्रीं क्लीं काम्येश्वर्यै नमः</div>
+                </div>
+                <div class="mantra-script-tamil">
+                  <span class="script-label">Tamil / தமிழ்:</span>
+                  <div id="resMantraTamil" class="tamil-text">ஓம் ஐம் ஹ்ரீம் க்ளீம் காமேஸ்வர்யை நமஹ</div>
+                </div>
+                <div class="mantra-script-en">
+                  <span class="script-label">English Transliteration:</span>
+                  <div id="resMantraEn" class="en-text">Om Aim Hrim Klim Kameshvaryai Namah</div>
+                </div>
+              </div>
+
+              <!-- Interactive 108 Japa Counter Engine -->
+              <div class="japa-player-box">
+                <div class="japa-header">
+                  <span class="japa-title">📿 Interactive 108 Japa Counter</span>
+                  <button id="btnSpeedToggle" class="btn-speed-badge">Speed: <span id="speedText">1.0x</span></button>
+                </div>
+
+                <div class="japa-display-row">
+                  <div class="japa-counter-ring">
+                    <svg viewBox="0 0 100 100" class="ring-svg">
+                      <circle cx="50" cy="50" r="44" class="ring-bg"/>
+                      <circle cx="50" cy="50" r="44" class="ring-fill" id="japaProgressRing"/>
+                    </svg>
+                    <div class="ring-center-text">
+                      <span class="count-num" id="japaCountDisplay">0</span>
+                      <span class="count-total">/ 108</span>
+                    </div>
+                  </div>
+
+                  <div class="japa-controls-group">
+                    <button id="btnStartJapa" class="btn-japa-play">
+                      <svg class="icon icon-stroke" viewBox="0 0 24 24"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                      <span>Start 108 Japa Chant</span>
+                    </button>
+                    <button id="btnResetJapa" class="btn-japa-reset">
+                      <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M21.5 2v6h-6M21.34 15.57a10 10 0 1 1-.57-8.38l5.67-5.67"></path></svg>
+                      <span>Reset</span>
+                    </button>
+                  </div>
+                </div>
+
+                <div id="japaStatusMessage" class="japa-status-msg">
+                  Click 'Start 108 Japa Chant' to begin sacred mantra recitation with temple bell chime.
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- CARD 5: SACRED POOJA YANTRA & DOWNLOAD -->
+          <div class="report-card yantra-card">
+            <div class="card-head">
+              <div class="card-icon-box">🏵️</div>
+              <div>
+                <h3 class="card-title-en">Sacred Geometry Pooja Yantra</h3>
+                <span class="card-title-ta">ஸ்ரீ பூஜா யந்திரம் (பூஜை அறைக்கு)</span>
+              </div>
+            </div>
+            <div class="card-body text-center">
+              <div class="yantra-display-wrapper">
+                <div id="deviYantra" class="devi-yantra-box"></div>
+              </div>
+              <p class="yantra-hint">
+                Keep this sacred Sri Yantra in your Pooja room for divine protection, positive energy and cosmic peace.
+              </p>
+              <button id="btnDownloadYantra" class="btn-download-yantra">
+                <svg class="icon icon-stroke" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+                <span>Download Printable Yantra PNG for Pooja Room</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- CARD 6: WHATSAPP CONSULTATION & PRINT PDF ACTIONS -->
+          <div class="report-card cta-consult-card">
+            <div class="cta-inner">
+              <div class="cta-badge">✦ PERSONAL REMEDIES & TAROT CONSULTATION ✦</div>
+              <h3>Need In-Depth Personal Tithi Remedies & Tarot Reading?</h3>
+              <p>Connect directly with <strong>Rekha Tarot Queen</strong> for personalized remedies, relationship tarot & spiritual guidance.</p>
+              
+              <div class="cta-buttons-row">
+                <a href="https://wa.me/918939646856?text=Hello%20Rekha%20Queen,%20I%20have%20calculated%20my%20Tithi%20Devathai%20and%20would%20like%20a%20personal%20Tarot%20%26%20Spiritual%20Consultation." target="_blank" class="btn-wa-direct">
+                  <div class="wa-icon-box"><svg class="wa-svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12.031 2c-5.517 0-9.993 4.477-9.993 9.994 0 1.763.459 3.487 1.332 5.006l-1.417 5.176 5.297-1.389c1.474.804 3.137 1.227 4.781 1.227h.004c5.516 0 9.993-4.477 9.993-9.994 0-2.673-1.041-5.186-2.93-7.075-1.888-1.888-4.402-2.942-7.067-2.942zm5.836 14.161c-.244.688-1.428 1.314-1.97 1.382-.503.064-1.157.091-3.666-.948-2.684-1.11-4.409-3.856-4.544-4.037-.133-.18-1.088-1.452-1.088-2.769 0-1.318.687-1.966.932-2.228.244-.262.533-.327.711-.327.177 0 .355.001.51.009.166.008.388-.063.606.46.222.533.755 1.84.821 1.974.067.134.111.291.022.469-.089.177-.133.289-.267.444-.133.156-.28.349-.4.469-.133.133-.272.278-.117.544.156.266.69 1.14 1.481 1.844 1.018.906 1.875 1.187 2.142 1.32.267.133.422.111.577-.067.156-.177.667-.777.844-1.044.177-.267.355-.222.599-.133.244.089 1.555.733 1.822.866.267.133.444.2.511.311.067.111.067.644-.177 1.332z"/></svg></div>
+                  <span>Book Consultation on WhatsApp</span>
+                </a>
+
+                <button id="btnPrintReport" class="btn-print-report">
+                  <svg class="icon icon-stroke" viewBox="0 0 24 24"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+                  <span>Print / Save PDF Report</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </main>
+
+  <!-- 100% FULL WIDTH DARK FOOTER -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <!-- Brand & WhatsApp Booking Column -->
+        <div class="footer-col brand-col">
+          <div class="footer-brand-title">✦ REKHA THE TAROT QUEEN ✦</div>
+          <p class="footer-brand-desc">
+            Empowering your spiritual journey through divine Tarot Insights, Tithi Devathai Wisdom, Remedies and Astrological Guidance.
+          </p>
+
+          <a href="https://wa.me/918939646856?text=Hello%20Rekha%20Queen,%20I%20would%20like%20to%20book%20a%20personal%20Tarot%20%26%20Tithi%20Consultation." target="_blank" class="footer-wa-booking" aria-label="Book Consultation on WhatsApp">
+            <div class="wa-icon-box">
+              <svg class="wa-svg" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M12.031 2c-5.517 0-9.993 4.477-9.993 9.994 0 1.763.459 3.487 1.332 5.006l-1.417 5.176 5.297-1.389c1.474.804 3.137 1.227 4.781 1.227h.004c5.516 0 9.993-4.477 9.993-9.994 0-2.673-1.041-5.186-2.93-7.075-1.888-1.888-4.402-2.942-7.067-2.942zm5.836 14.161c-.244.688-1.428 1.314-1.97 1.382-.503.064-1.157.091-3.666-.948-2.684-1.11-4.409-3.856-4.544-4.037-.133-.18-1.088-1.452-1.088-2.769 0-1.318.687-1.966.932-2.228.244-.262.533-.327.711-.327.177 0 .355.001.51.009.166.008.388-.063.606.46.222.533.755 1.84.821 1.974.067.134.111.291.022.469-.089.177-.133.289-.267.444-.133.156-.28.349-.4.469-.133.133-.272.278-.117.544.156.266.69 1.14 1.481 1.844 1.018.906 1.875 1.187 2.142 1.32.267.133.422.111.577-.067.156-.177.667-.777.844-1.044.177-.267.355-.222.599-.133.244.089 1.555.733 1.822.866.267.133.444.2.511.311.067.111.067.644-.177 1.332z"/>
+              </svg>
+            </div>
+            <div class="wa-details">
+              <span class="wa-badge">Book Personal Consultation</span>
+              <span class="wa-num">+91 89396 46856</span>
+              <span class="wa-hint">Click here to chat on WhatsApp</span>
+            </div>
+          </a>
+        </div>
+
+        <!-- YouTube Subscription Column -->
+        <div class="footer-col yt-col">
+          <div class="footer-heading">
+            <svg class="icon-yt" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+            Official YouTube Channel
+          </div>
+          <p class="yt-desc">
+            Watch weekly Tarot predictions, Tithi worship secrets, and spiritual guidance on <strong>Rekha Queen Channel</strong>.
+          </p>
+          <a href="https://youtube.com/@rekhaqueentarot" target="_blank" class="btn-yt-subscribe" aria-label="Subscribe on YouTube">
+            <span>Subscribe on YouTube</span>
+          </a>
+        </div>
+
+        <!-- Quick Links Column -->
+        <div class="footer-col links-col">
+          <div class="footer-heading">Quick Links</div>
+          <ul class="footer-links">
+            <li><a href="index.html#dob">Tithi Devathai Calculator</a></li>
+            <li><a href="index.html#about">About Tithi Devathai</a></li>
+            <li><a href="index.html#faq">Frequently Asked Questions</a></li>
+            <li><a href="https://wa.me/918939646856" target="_blank">Contact & Consultations</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 REKHA THE TAROT QUEEN. All Rights Reserved.</div>
+        <div>Designed with Sacred Elegance for Spiritual Seekers</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Include JavaScript logic -->
+  <script src="app.js"></script>
+  <script src="result.js"></script>
+</body>
+</html>

@@ -3,20 +3,23 @@
  * Created for REKHA THE TAROT QUEEN
  */
 
-// Theme Management
-const THEME_KEY = "tithi_theme";
+// Theme Management - Default Dark Theme for All Users
+const THEME_KEY = "tithi_theme_mode";
 
 function getPreferredTheme() {
   const savedTheme = localStorage.getItem(THEME_KEY);
   if (savedTheme === "dark" || savedTheme === "light") {
     return savedTheme;
   }
-  return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+  // Default is strictly Dark Theme for everyone
+  return "dark";
 }
 
-function setTheme(theme) {
+function setTheme(theme, save = true) {
   document.documentElement.setAttribute("data-theme", theme);
-  localStorage.setItem(THEME_KEY, theme);
+  if (save) {
+    localStorage.setItem(THEME_KEY, theme);
+  }
   if (typeof updateParticleColorsForTheme === "function") {
     updateParticleColorsForTheme();
   }
@@ -40,9 +43,9 @@ function setTheme(theme) {
 }
 
 function toggleTheme() {
-  const currentTheme = document.documentElement.getAttribute("data-theme") || "light";
+  const currentTheme = document.documentElement.getAttribute("data-theme") || "dark";
   const newTheme = currentTheme === "dark" ? "light" : "dark";
-  setTheme(newTheme);
+  setTheme(newTheme, true);
 }
 
 // Set initial theme immediately before DOM content loads to avoid FOUC
@@ -133,6 +136,7 @@ const deviData = {
     color: "#e91e8c",
     colorAlt: "#ff6ec7",
     glow: "rgba(233,30,140,0.45)",
+    image: "images/kameshvari.jpg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं काम्येश्वर्यै नमः",
     mantraEn: "Om Aim Hrim Klim Kameshvaryai Namah",
     element: "🌺 Divine Desire & Sacred Love",
@@ -145,6 +149,7 @@ const deviData = {
     color: "#f59e0b",
     colorAlt: "#fcd34d",
     glow: "rgba(245,158,11,0.45)",
+    image: "images/bhagamalini.jpg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं भगमालिन्यै नमः",
     mantraEn: "Om Aim Hrim Klim Bhagamaliniyai Namah",
     element: "🌸 Abundance & Life Force",
@@ -157,6 +162,7 @@ const deviData = {
     color: "#3b82f6",
     colorAlt: "#93c5fd",
     glow: "rgba(59,130,246,0.45)",
+    image: "images/nityaklinna.jpg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं नित्यक्लिन्नायै नमः",
     mantraEn: "Om Aim Hrim Klim Nityaklinnayai Namah",
     element: "💧 Devotion & Compassion",
@@ -169,6 +175,7 @@ const deviData = {
     color: "#dc2626",
     colorAlt: "#fca5a5",
     glow: "rgba(220,38,38,0.45)",
+    image: "images/bherunda.jpg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं भेरुण्डायै नमः",
     mantraEn: "Om Aim Hrim Klim Bherundayai Namah",
     element: "🔱 Courage & Protection",
@@ -181,6 +188,7 @@ const deviData = {
     color: "#f97316",
     colorAlt: "#fdba74",
     glow: "rgba(249,115,22,0.45)",
+    image: "images/vahnivasini.jpg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं वह्निवासिन्यै नमः",
     mantraEn: "Om Aim Hrim Klim Vahnivasiniyai Namah",
     element: "🔥 Purification & Vitality",
@@ -193,6 +201,7 @@ const deviData = {
     color: "#d4a017",
     colorAlt: "#fde68a",
     glow: "rgba(212,160,23,0.45)",
+    image: "images/mahavajreshvari.jpg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं महावज्रेश्वर्यै नमः",
     mantraEn: "Om Aim Hrim Klim Mahavajreshvaryai Namah",
     element: "⚡ Firmness & Prosperity",
@@ -205,6 +214,7 @@ const deviData = {
     color: "#7c3aed",
     colorAlt: "#c4b5fd",
     glow: "rgba(124,58,237,0.45)",
+    image: "images/shivaduti.jpg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं शिवदूत्यै नमः",
     mantraEn: "Om Aim Hrim Klim Shivadutyai Namah",
     element: "🌑 Fearless Transformation",
@@ -217,6 +227,7 @@ const deviData = {
     color: "#0d9488",
     colorAlt: "#5eead4",
     glow: "rgba(13,148,136,0.45)",
+    image: "images/tvarita.jpg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं त्वरितायै नमः",
     mantraEn: "Om Aim Hrim Klim Tvaritayai Namah",
     element: "💨 Swiftness & Movement",
@@ -229,6 +240,7 @@ const deviData = {
     color: "#db2777",
     colorAlt: "#f9a8d4",
     glow: "rgba(219,39,119,0.45)",
+    image: "images/kulasundari.jpg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं कुलसुन्दर्यै नमः",
     mantraEn: "Om Aim Hrim Klim Kulasundaryai Namah",
     element: "📿 Knowledge & Higher Wisdom",
@@ -241,7 +253,8 @@ const deviData = {
     color: "#64748b",
     colorAlt: "#cbd5e1",
     glow: "rgba(100,116,139,0.45)",
-    mantraSanskrit: "ॐ ऐं ह्रीं क्लीं नित्यायै नमः",
+    image: "images/nitya.jpg",
+    mantraSanskrit: "ॐ ऐं ह्रीं क्लीं नित்யायை नमः",
     mantraEn: "Om Aim Hrim Klim Nityayai Namah",
     element: "🌙 Steadiness & Continuity",
     flower: "மருதாணி பூ & வெண்தாமரை",
@@ -253,6 +266,7 @@ const deviData = {
     color: "#4338ca",
     colorAlt: "#a5b4fc",
     glow: "rgba(67,56,202,0.45)",
+    image: "images/nilapataka.jpg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं नीलपताकायै नमः",
     mantraEn: "Om Aim Hrim Klim Nilapatakayai Namah",
     element: "🏳️ Victory Over Obstacles",
@@ -265,6 +279,7 @@ const deviData = {
     color: "#059669",
     colorAlt: "#6ee7b7",
     glow: "rgba(5,150,105,0.45)",
+    image: "images/vijaya.jpg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं विजयायै नमः",
     mantraEn: "Om Aim Hrim Klim Vijayayai Namah",
     element: "🌿 Success & Achievement",
@@ -277,6 +292,7 @@ const deviData = {
     color: "#b45309",
     colorAlt: "#fcd34d",
     glow: "rgba(180,83,9,0.45)",
+    image: "images/sarvamangala.jpg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं सर्वमङ्गलायै नमः",
     mantraEn: "Om Aim Hrim Klim Sarvamangalayai Namah",
     element: "🌞 Auspiciousness & Harmony",
@@ -289,6 +305,7 @@ const deviData = {
     color: "#ef4444",
     colorAlt: "#fca5a5",
     glow: "rgba(239,68,68,0.45)",
+    image: "images/jwalamalini.jpg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं ज्वालामालिन्यै नमः",
     mantraEn: "Om Aim Hrim Klim Jwalamaliniyai Namah",
     element: "🔥 Fiery Transformation",
@@ -301,6 +318,7 @@ const deviData = {
     color: "#0284c7",
     colorAlt: "#7dd3fc",
     glow: "rgba(2,132,199,0.45)",
+    image: "images/chitra.jpg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं चित्रायै नमः",
     mantraEn: "Om Aim Hrim Klim Chitrayai Namah",
     element: "🎨 Beauty & Creativity",
@@ -313,6 +331,7 @@ const deviData = {
     color: "#9333ea",
     colorAlt: "#d8b4fe",
     glow: "rgba(147,51,234,0.45)",
+    image: "images/maha_tripura_sundari.jpg",
     mantraSanskrit: "ॐ ऐं ह्रीं श्रीं महात्रिपुरसुन्दर्यै नमः",
     mantraEn: "Om Aim Hrim Shrim Maha Tripura Sundaryai Namah",
     element: "👑 Supreme Completeness",
@@ -636,6 +655,8 @@ function initCustomTimezoneDropdown() {
         clearFieldError("tz", "tzError");
         popover.classList.remove("active");
         wrapper.classList.remove("active");
+        const tzGroup = document.getElementById("tzGroup");
+        if (tzGroup) tzGroup.classList.remove("active");
       });
     });
   };
@@ -654,33 +675,40 @@ function initCustomTimezoneDropdown() {
   const toggleTzPopover = (e) => {
     e.stopPropagation();
     const isActive = popover.classList.contains("active");
+    const tzGroup = document.getElementById("tzGroup");
 
     // Close calendar if active
     const calPopover = document.getElementById("calendarPopover");
     const dobWrapper = document.getElementById("dobWrapper");
+    const dobGroup = document.getElementById("dobGroup");
     if (calPopover) calPopover.classList.remove("active");
     if (dobWrapper) dobWrapper.classList.remove("active");
+    if (dobGroup) dobGroup.classList.remove("active");
 
     if (!isActive) {
       if (searchInput) searchInput.value = "";
       renderOptions();
       popover.classList.add("active");
       wrapper.classList.add("active");
+      if (tzGroup) tzGroup.classList.add("active");
       if (searchInput) {
         setTimeout(() => searchInput.focus(), 100);
       }
     } else {
       popover.classList.remove("active");
       wrapper.classList.remove("active");
+      if (tzGroup) tzGroup.classList.remove("active");
     }
   };
 
   wrapper.addEventListener("click", toggleTzPopover);
 
   document.addEventListener("click", (e) => {
+    const tzGroup = document.getElementById("tzGroup");
     if (!popover.contains(e.target) && !wrapper.contains(e.target)) {
       popover.classList.remove("active");
       wrapper.classList.remove("active");
+      if (tzGroup) tzGroup.classList.remove("active");
     }
   });
 }
@@ -812,6 +840,7 @@ function calculateTithi() {
   const tzHiddenInput = document.getElementById("tz");
   const tzSelectInput = document.getElementById("tzSelectInput");
   const customTzInput = document.getElementById("customTz");
+  const placeInput = document.getElementById("place");
 
   let firstInvalid = null;
 
@@ -846,6 +875,7 @@ function calculateTithi() {
   const dob = dobInput.value;
   const tob = tobInput.value;
   const tz = getTimezone();
+  const place = placeInput && placeInput.value.trim() ? placeInput.value.trim() : "Chennai, Tamil Nadu, India";
 
   if (typeof luxon === "undefined" || !luxon.DateTime) {
     showBannerAlert("Timezone parsing library (Luxon) is still loading. Please check your internet connection.");
@@ -867,25 +897,19 @@ function calculateTithi() {
     return;
   }
 
-  // Calculate moon phase angle in degrees (0 to 360)
-  let phase = Astronomy.MoonPhase(dt.toUTC().toJSDate());
-  phase = ((phase % 360) + 360) % 360;
+  // Save to SessionStorage
+  sessionStorage.setItem("tithi_dob", dob);
+  sessionStorage.setItem("tithi_tob", tob);
+  sessionStorage.setItem("tithi_tz", tz);
+  sessionStorage.setItem("tithi_place", place);
 
-  const isShukla = phase < 180;
-  const within = isShukla ? phase : phase - 180;
-  
-  let num = Math.floor(within / 12) + 1;
-  num = Math.max(1, Math.min(15, num));
-
-  const map = isShukla ? shukla : krishna;
-  const devi = map[num - 1];
-
-  // Show loading overlay, then after delay render result
+  // Show loading overlay, then redirect to result.html
   showLoadingOverlay();
   setTimeout(() => {
     hideLoadingOverlay();
-    renderDeviResult(devi, num, isShukla, phase);
-  }, 2500);
+    const query = new URLSearchParams({ dob, tob, tz, place }).toString();
+    window.location.href = `result.html?${query}`;
+  }, 1200);
 }
 
 /**
@@ -895,10 +919,18 @@ function renderDeviResult(devi, num, isShukla, phase) {
   const deviName = devi[0];
   const data = deviData[deviName] || { color: "#9333ea", colorAlt: "#d8b4fe", glow: "rgba(147,51,234,0.45)", mantraSanskrit: "", mantraEn: "", element: "" };
 
-  // Update yantra SVG
-  const yantraEl = document.getElementById("deviYantra");
-  if (yantraEl) {
-    yantraEl.innerHTML = createYantraSVG(data.color, data.colorAlt);
+  // Update Devi Image
+  const deviImageCol = document.getElementById("deviYantra");
+  if (deviImageCol && data.image) {
+    deviImageCol.className = "devi-photo-wrap";
+    deviImageCol.innerHTML = `
+      <div class="devi-photo-frame" style="--devi-color: ${data.color}; --devi-glow: ${data.glow};">
+        <img src="${data.image}" alt="${deviName}" class="devi-photo-img" />
+      </div>
+    `;
+  } else if (deviImageCol) {
+    deviImageCol.className = "devi-yantra";
+    deviImageCol.innerHTML = createYantraSVG(data.color, data.colorAlt);
   }
 
   // Update glow
