@@ -137,8 +137,12 @@ const deviData = {
     colorAlt: "#ff6ec7",
     glow: "rgba(233,30,140,0.45)",
     image: "images/kameshvari.jpg",
-    mantraSanskrit: "ॐ ऐं ह्रीं क्लीं काम्येश्वर्यै नमः",
+    mantraSanskrit: "ॐ ऐं ह्रीं क्लीं कामेश्वर्यै नमः",
+    mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் காமேஸ்வர்யை நமஹ",
     mantraEn: "Om Aim Hrim Klim Kameshvaryai Namah",
+    gayatriSanskrit: "ॐ कामेश्वर्यै विद्महे नित्यक्लिन्नायै धीमहि तन्नो नित्या प्रचोदयात्",
+    gayatriTamil: "ஓம் காமேஸ்வர்யை வித்மஹே நித்யக்லின்னாயை தீமஹி தன்னோ நித்யா ப்ரசோதயாத்",
+    gayatriEn: "Om Kameshvaryai Vidmahe Nityaklinnayai Dhimahi Tanno Nitya Prachodayat",
     element: "🌺 Divine Desire & Sacred Love",
     flower: "செம்பருத்தி (Red Hibiscus) & ரோஜா (Rose)",
     neivedyam: "கற்கண்டு பால் (Rock Sugar Milk) & மாதுளை பழம் (Pomegranate)",
@@ -151,7 +155,11 @@ const deviData = {
     glow: "rgba(245,158,11,0.45)",
     image: "images/bhagamalini.jpg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं भगमालिन्यै नमः",
-    mantraEn: "Om Aim Hrim Klim Bhagamaliniyai Namah",
+    mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் பகமாலின்யை நமஹ",
+    mantraEn: "Om Aim Hrim Klim Bhagamalinyai Namah",
+    gayatriSanskrit: "ॐ भगमालिन्यै विद्महे सर्ववशङ्कर्यै धीमहि तन्नो नित्या प्रचोदयात्",
+    gayatriTamil: "ஓம் பகமாலின்யை வித்மஹே சர்வ வசங்கர்யை தீமஹி தன்னோ நித்யா ப்ரசோதயாத்",
+    gayatriEn: "Om Bhagamalinyai Vidmahe Sarvavashankaryai Dhimahi Tanno Nitya Prachodayat",
     element: "🌸 Abundance & Life Force",
     flower: "மஞ்சள் சாமந்தி (Marigold) & செந்தாமரை (Red Lotus)",
     neivedyam: "சர்க்கரை பொங்கல் (Sweet Pongal) & தேன் (Honey)",
@@ -164,7 +172,11 @@ const deviData = {
     glow: "rgba(59,130,246,0.45)",
     image: "images/nityaklinna.jpg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं नित्यक्लिन्नायै नमः",
+    mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் நித்யக்லின்னாயை நமஹ",
     mantraEn: "Om Aim Hrim Klim Nityaklinnayai Namah",
+    gayatriSanskrit: "ॐ नित्यक्लिन्नायै विद्महे नित्यमदद्रवायै धीमहि तन्नो नित्या प्रचोदयात्",
+    gayatriTamil: "ஓம் நித்யக்லின்னாயை வித்மஹே நித்ய மதத்ரவாயை தீமஹி தன்னோ நித்யா ப்ரசோதயாத்",
+    gayatriEn: "Om Nityaklinnayai Vidmahe Nityamadadravayai Dhimahi Tanno Nitya Prachodayat",
     element: "💧 Devotion & Compassion",
     flower: "வெண் மல்லிகை (Jasmine) & அல்லி மலர் (Water Lily)",
     neivedyam: "பால் பாயாசம் (Kheer / Milk Payasam) & தயிர் சாதம்",
@@ -177,7 +189,11 @@ const deviData = {
     glow: "rgba(220,38,38,0.45)",
     image: "images/bherunda.jpg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं भेरुण्डायै नमः",
+    mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் பேருண்டாயை நமஹ",
     mantraEn: "Om Aim Hrim Klim Bherundayai Namah",
+    gayatriSanskrit: "ॐ भेरुण्डायै विद्महे विषहरायै धीमहि तन्नो नित्या प्रचोदयात्",
+    gayatriTamil: "ஓம் பேருண்டாயை வித்மஹே விஷஹராயை தீமஹி தன்னோ நித்யா ப்ரசோதயாத்",
+    gayatriEn: "Om Bherundayai Vidmahe Vishaharayai Dhimahi Tanno Nitya Prachodayat",
     element: "🔱 Courage & Protection",
     flower: "சிவப்பு அரளி (Red Oleander) & செவ்வந்தி",
     neivedyam: "மிளகு வடை, கார சுண்டல் & எள் உருண்டை",
@@ -190,7 +206,11 @@ const deviData = {
     glow: "rgba(249,115,22,0.45)",
     image: "images/vahnivasini.jpg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं वह्निवासिन्यै नमः",
-    mantraEn: "Om Aim Hrim Klim Vahnivasiniyai Namah",
+    mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் வஹ்னிவாஸின்யை நமஹ",
+    mantraEn: "Om Aim Hrim Klim Vahnivasinyai Namah",
+    gayatriSanskrit: "ॐ वह्निवासिन्यै विद्महे सिद्धिप्रदायै धीमहि तन्नो नित्या प्रचोदयात्",
+    gayatriTamil: "ஓம் வஹ்னிவாஸின்யை வித்மஹே சித்திப்ரதாயை தீமஹி தன்னோ நித்யா ப்ரசோதயாத்",
+    gayatriEn: "Om Vahnivasinyai Vidmahe Siddhipradayai Dhimahi Tanno Nitya Prachodayat",
     element: "🔥 Purification & Vitality",
     flower: "பவளமல்லி & செவ்வரளி மலர்",
     neivedyam: "குங்குமப்பூ பால் & நெய் அப்பம் (Ney Appam)",
@@ -203,7 +223,11 @@ const deviData = {
     glow: "rgba(212,160,23,0.45)",
     image: "images/mahavajreshvari.jpg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं महावज्रेश्वर्यै नमः",
+    mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் மஹா வஜ்ரேஸ்வர்யை நமஹ",
     mantraEn: "Om Aim Hrim Klim Mahavajreshvaryai Namah",
+    gayatriSanskrit: "ॐ महावज्रेश्वर्यै विद्महे वज्रनित्यायै धीमहि तन्नो नित्या प्रचोदयात्",
+    gayatriTamil: "ஓம் மஹா வஜ்ரேஸ்வர்யை வித்மஹே வஜ்ர நித்யாயை தீமஹி தன்னோ நித்யா ப்ரசோதயாத்",
+    gayatriEn: "Om Mahavajreshvaryai Vidmahe Vajranityayai Dhimahi Tanno Nitya Prachodayat",
     element: "⚡ Firmness & Prosperity",
     flower: "மஞ்சள் தாமரை & நந்தியாவட்டை மலர்",
     neivedyam: "எலுமிச்சை சாதம், மாம்பழம் & கற்கண்டு",
@@ -216,7 +240,11 @@ const deviData = {
     glow: "rgba(124,58,237,0.45)",
     image: "images/shivaduti.jpg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं शिवदूत्यै नमः",
+    mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் சிவதூத்யை நமஹ",
     mantraEn: "Om Aim Hrim Klim Shivadutyai Namah",
+    gayatriSanskrit: "ॐ शिवदूत्यै विद्महे शिवङ्कर्यै धीमहि तन्नो नित्या प्रचोदयात्",
+    gayatriTamil: "ஓம் சிவதூத்யை வித்மஹே சிவங்கர்யை தீமஹி தன்னோ நித்யா ப்ரசோதயாத்",
+    gayatriEn: "Om Shivadutyai Vidmahe Shivankaryai Dhimahi Tanno Nitya Prachodayat",
     element: "🌑 Fearless Transformation",
     flower: "நீல சங்குப்பூ (Aparajita) & வில்வ இலை (Bilva)",
     neivedyam: "பஞ்சாமிர்தம், பேரீச்சம்பழம் & உளுந்து வடை",
@@ -229,7 +257,11 @@ const deviData = {
     glow: "rgba(13,148,136,0.45)",
     image: "images/tvarita.jpg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं त्वरितायै नमः",
+    mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் த்வரிதாயை நமஹ",
     mantraEn: "Om Aim Hrim Klim Tvaritayai Namah",
+    gayatriSanskrit: "ॐ त्वरितायै विद्महे महानित्यायै धीमहि तन्नो नित्या प्रचोदयात्",
+    gayatriTamil: "ஓம் த்வரிதாயை வித்மஹே மஹாநித்யாயை தீமஹி தன்னோ நித்யா ப்ரசோதயாத்",
+    gayatriEn: "Om Tvaritayai Vidmahe Mahanityayai Dhimahi Tanno Nitya Prachodayat",
     element: "💨 Swiftness & Movement",
     flower: "துளசி (Tulsi), மரிக்கொழுந்து & பச்சை மலர்கள்",
     neivedyam: "பச்சை பயறு சுண்டல் & வெண்பொங்கல் (Ghee Pongal)",
@@ -242,7 +274,11 @@ const deviData = {
     glow: "rgba(219,39,119,0.45)",
     image: "images/kulasundari.jpg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं कुलसुन्दर्यै नमः",
+    mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் குலசுந்தர்யை நமஹ",
     mantraEn: "Om Aim Hrim Klim Kulasundaryai Namah",
+    gayatriSanskrit: "ॐ कुलसुन्दर्यै विद्महे कामेश्वर्यै धीमहि तन्नो शक्तिः प्रचोदयात्",
+    gayatriTamil: "ஓம் குலசுந்தர்யை வித்மஹே காமேஸ்வர்யை தீமஹி தன்னோ சக்தி ப்ரசோதயாத்",
+    gayatriEn: "Om Kulasundaryai Vidmahe Kameshvaryai Dhimahi Tanno Shaktih Prachodayat",
     element: "📿 Knowledge & Higher Wisdom",
     flower: "வெண்தாமரை (White Lotus) & முல்லை மலர்",
     neivedyam: "நெய் சாதம் & ஏலக்காய் பாதாம் பால்",
@@ -254,8 +290,12 @@ const deviData = {
     colorAlt: "#cbd5e1",
     glow: "rgba(100,116,139,0.45)",
     image: "images/nitya.jpg",
-    mantraSanskrit: "ॐ ऐं ह्रीं क्लीं नित்யायை नमः",
+    mantraSanskrit: "ॐ ऐं ह्रीं क्लीं नित्यायै नमः",
+    mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் நித்யாயை நமஹ",
     mantraEn: "Om Aim Hrim Klim Nityayai Namah",
+    gayatriSanskrit: "ॐ नित्यायै विद्महे ज्ञानरूपायै धीमहि तन्नो देवी प्रचोदयात्",
+    gayatriTamil: "ஓம் நித்யாயை வித்மஹே ஞானரூபாயை தீமஹி தன்னோ தேவி ப்ரசோதயாத்",
+    gayatriEn: "Om Nityayai Vidmahe Jnanarupayai Dhimahi Tanno Devi Prachodayat",
     element: "🌙 Steadiness & Continuity",
     flower: "மருதாணி பூ & வெண்தாமரை",
     neivedyam: "வெள்ளை சுண்டல் & நாட்டு வாழைப்பழம்",
@@ -268,7 +308,11 @@ const deviData = {
     glow: "rgba(67,56,202,0.45)",
     image: "images/nilapataka.jpg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं नीलपताकायै नमः",
+    mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் நீலபதாகாயை நமஹ",
     mantraEn: "Om Aim Hrim Klim Nilapatakayai Namah",
+    gayatriSanskrit: "ॐ नीलपताकायै विद्महे महानित्यायै धीमहि तन्नो देवी प्रचोदयात्",
+    gayatriTamil: "ஓம் நீலபதாகாயை வித்மஹே மஹாநித்யாயை தீமஹி தன்னோ தேவி ப்ரசோதயாத்",
+    gayatriEn: "Om Nilapatakayai Vidmahe Mahanityayai Dhimahi Tanno Devi Prachodayat",
     element: "🏳️ Victory Over Obstacles",
     flower: "நீலோத்பலம் (Blue Water Lily) & நீல சங்குப்பூ",
     neivedyam: "எள் சாதம் & உலர் திராட்சை பழங்கள்",
@@ -281,7 +325,11 @@ const deviData = {
     glow: "rgba(5,150,105,0.45)",
     image: "images/vijaya.jpg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं विजयायै नमः",
+    mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் விஜயாயை நமஹ",
     mantraEn: "Om Aim Hrim Klim Vijayayai Namah",
+    gayatriSanskrit: "ॐ विजयादेव्यै विद्महे महानित्यायै धीमहि तन्नो देवी प्रचोदयात्",
+    gayatriTamil: "ஓம் விஜயாதேவ்யை வித்மஹே மஹாநித்யாயை தீமஹி தன்னோ தேவி ப்ரசோதயாத்",
+    gayatriEn: "Om Vijayadevyai Vidmahe Mahanityayai Dhimahi Tanno Devi Prachodayat",
     element: "🌿 Success & Achievement",
     flower: "செவ்வரளி & துளசி மாலை",
     neivedyam: "சர்க்கரை பொங்கல் & அவல் பாயாசம்",
@@ -294,7 +342,11 @@ const deviData = {
     glow: "rgba(180,83,9,0.45)",
     image: "images/sarvamangala.jpg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं सर्वमङ्गलायै नमः",
+    mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் சர்வமங்களாயை நமஹ",
     mantraEn: "Om Aim Hrim Klim Sarvamangalayai Namah",
+    gayatriSanskrit: "ॐ सर्वमङ्गलायै विद्महे चन्द्रात्मिकायै धीमहि तन्नो नित्या प्रचोदयात्",
+    gayatriTamil: "ஓம் சர்வமங்களாயை வித்மஹே சந்த்ராத்மிகாயை தீமஹி தன்னோ நித்யா ப்ரசோதயாத்",
+    gayatriEn: "Om Sarvamangalayai Vidmahe Chandratmikayai Dhimahi Tanno Nitya Prachodayat",
     element: "🌞 Auspiciousness & Harmony",
     flower: "மஞ்சள் ரோஜா & மணமுள்ள மல்லிகை",
     neivedyam: "ரவா கேசரி & வெற்றிலை பாக்கு பழம்",
@@ -307,7 +359,11 @@ const deviData = {
     glow: "rgba(239,68,68,0.45)",
     image: "images/jwalamalini.jpg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं ज्वालामालिन्यै नमः",
-    mantraEn: "Om Aim Hrim Klim Jwalamaliniyai Namah",
+    mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் ஜ்வாலாமாலின்யை நமஹ",
+    mantraEn: "Om Aim Hrim Klim Jwalamalinyai Namah",
+    gayatriSanskrit: "ॐ ज्वालामालिन्यै विद्महे महाज्वालायै धीमहि तन्नो देवी प्रचोदयात्",
+    gayatriTamil: "ஓம் ஜ்வாலாமாலின்யை வித்மஹே மஹாஜ்வாலாயை தீமஹி தன்னோ தேவி ப்ரசோதயாத்",
+    gayatriEn: "Om Jwalamalinyai Vidmahe Mahajwalayai Dhimahi Tanno Devi Prachodayat",
     element: "🔥 Fiery Transformation",
     flower: "செந்தாமரை & அடர் சிவப்பு ரோஜா",
     neivedyam: "தித்திப்பு நெய் அப்பம் & வெல்ல பாயாசம்",
@@ -320,7 +376,11 @@ const deviData = {
     glow: "rgba(2,132,199,0.45)",
     image: "images/chitra.jpg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं चित्रायै नमः",
+    mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் சித்ராயை நமஹ",
     mantraEn: "Om Aim Hrim Klim Chitrayai Namah",
+    gayatriSanskrit: "ॐ विचित्रायै विद्महे महानित्यायै धीमहि तन्नो देवी प्रचोदयात्",
+    gayatriTamil: "ஓம் விசித்ராயை வித்மஹே மஹாநித்யாயை தீமஹி தன்னோ தேவி ப்ரசோதயாத்",
+    gayatriEn: "Om Vichitrayai Vidmahe Mahanityayai Dhimahi Tanno Devi Prachodayat",
     element: "🎨 Beauty & Creativity",
     flower: "பலவண்ண நறுமண மலர்கள் (Colorful Flowers)",
     neivedyam: "பழ சாலட், தேன் கலந்த தினை மாவு & அவல் நைவேத்தியம்",
@@ -333,13 +393,18 @@ const deviData = {
     glow: "rgba(147,51,234,0.45)",
     image: "images/maha_tripura_sundari.jpg",
     mantraSanskrit: "ॐ ऐं ह्रीं श्रीं महात्रिपुरसुन्दर्यै नमः",
+    mantraTamil: "ஓம் ஐம் ஹ்ரீம் ஸ்ரீம் மஹா திரிபுரசுந்தர்யை நமஹ",
     mantraEn: "Om Aim Hrim Shrim Maha Tripura Sundaryai Namah",
+    gayatriSanskrit: "ॐ त्रिपुरासुन्दर्यै विद्महे कामेश्वर्यै धीमहि तन्नो क्लिन्ना प्रचोदयात्",
+    gayatriTamil: "ஓம் திரிபுரசுந்தர்யை வித்மஹே காமேஸ்வர்யை தீமஹி தன்னோ க்லின்னா ப்ரசோதயாத்",
+    gayatriEn: "Om Tripurasundaryai Vidmahe Kameshvaryai Dhimahi Tanno Klinna Prachodayat",
     element: "👑 Supreme Completeness",
     flower: "செந்தாமரை (Red Lotus) & கடம்ப மலர்",
     neivedyam: "பஞ்சாமிர்தம், பருப்பு பாயாசம் & லட்டு",
     bestTime: "பௌர்ணமி இரவு நிலவு ஒளி நேரம் (Full Moon Night)",
     blessings: "மோட்சம், சர்வ ஐஸ்வர்யம், ஸ்ரீ லலிதா பரமேஸ்வரியின் பரிபூரண பேரருள்"
   }
+
 };
 
 // Custom Calendar Engine
@@ -903,13 +968,23 @@ function calculateTithi() {
   sessionStorage.setItem("tithi_tz", tz);
   sessionStorage.setItem("tithi_place", place);
 
-  // Show loading overlay, then redirect to result.html
+  // Disable button to prevent duplicate submission
+  const calcBtn = document.getElementById("calcBtn");
+  if (calcBtn) {
+    calcBtn.disabled = true;
+  }
+
+  // Show celestial loading overlay
   showLoadingOverlay();
+
+  // Build target URL with parameters
+  const query = new URLSearchParams({ dob, tob, tz, place }).toString();
+  const targetUrl = `result.html?${query}`;
+
+  // Smooth transition to result page (keeping overlay active so form never flashes back)
   setTimeout(() => {
-    hideLoadingOverlay();
-    const query = new URLSearchParams({ dob, tob, tz, place }).toString();
-    window.location.href = `result.html?${query}`;
-  }, 1200);
+    window.location.assign(targetUrl);
+  }, 750);
 }
 
 /**
@@ -1700,5 +1775,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const calcBtn = document.getElementById("calcBtn");
   if (calcBtn) {
     calcBtn.addEventListener("click", calculateTithi);
+  }
+});
+
+// Reset loading state if user navigates back to index.html via browser history/cache
+window.addEventListener("pageshow", () => {
+  hideLoadingOverlay();
+  const calcBtn = document.getElementById("calcBtn");
+  if (calcBtn) {
+    calcBtn.disabled = false;
   }
 });
