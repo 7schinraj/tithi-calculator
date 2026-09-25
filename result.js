@@ -19,7 +19,7 @@ const extendedDeviDetails = {
     gayatriSanskrit: "ॐ कामेश्वर्यै विद्महे नित्यक्लिन्नायै धीमहि तन्नो नित्या प्रचोदयात्",
     gayatriTamil: "ஓம் காமேஸ்வர்யை வித்மஹே நித்யக்லின்னாயை தீமஹி தன்னோ நித்யா ப்ரசோதயாத்",
     gayatriEn: "Om Kameshvaryai Vidmahe Nityaklinnayai Dhimahi Tanno Nitya Prachodayat",
-    element: "🌺 Divine Desire, Attraction & Auspicious Beginnings",
+    element: "Divine Desire, Attraction & Auspicious Beginnings",
     meaningEn: "Associated with divine desire, attraction, fulfilment and auspicious beginnings.",
     meaningTa: "இறை விருப்பம், ஈர்ப்பு சக்தி, புதிய சுப காரியங்களின் தொடக்கம் மற்றும் ஆசைகள் நிறைவேறும் தெய்வீக ஆற்றல் கொண்ட தேவி.",
     flower: "செம்பருத்தி (Red Hibiscus) & ரோஜா (Rose)",
@@ -38,7 +38,7 @@ const extendedDeviDetails = {
     gayatriSanskrit: "ॐ भगमालिन्यै विद्महे सर्ववशङ्कर्यै धीमहि तन्नो नित्या प्रचोदयात्",
     gayatriTamil: "ஓம் பகமாலின்யை வித்மஹே சர்வ வசங்கர்யை தீமஹி தன்னோ நித்யா ப்ரசோதயாத்",
     gayatriEn: "Om Bhagamalinyai Vidmahe Sarvavashankaryai Dhimahi Tanno Nitya Prachodayat",
-    element: "🌸 Abundance, Creative Shakti & Life Force",
+    element: "Abundance, Creative Shakti & Life Force",
     meaningEn: "Associated with creative Shakti, abundance, nurturing and life-force.",
     meaningTa: "படைப்பு சக்தி, வளம், ஆரோக்கியம், கர்ப்ப பாதுகாப்பு மற்றும் ஜீவ ரக்ஷை அருளும் தேவி.",
     flower: "மஞ்சள் சாமந்தி (Marigold) & செந்தாமரை (Red Lotus)",
@@ -57,7 +57,7 @@ const extendedDeviDetails = {
     gayatriSanskrit: "ॐ नित्यक्लिन्नायै विद्महे नित्यमदद्रवायै धीमहि तन्नो नित्या प्रचोदयात्",
     gayatriTamil: "ஓம் நித்யக்லின்னாயை வித்மஹே நித்ய மதத்ரவாயை தீமஹி தன்னோ நித்யா ப்ரசோதயாத்",
     gayatriEn: "Om Nityaklinnayai Vidmahe Nityamadadravayai Dhimahi Tanno Nitya Prachodayat",
-    element: "💧 Devotion, Pure Love & Compassion",
+    element: "Devotion, Pure Love & Compassion",
     meaningEn: "Associated with devotion, compassion and inner surrender.",
     meaningTa: "பக்தி, அளவற்ற கருணை, குடும்பத்தில் அன்பும் ஒற்றுமையும் பெருக அருளும் கருணாம்பிகை.",
     flower: "வெண் மல்லிகை (Jasmine) & அல்லி மலர் (Water Lily)",
@@ -76,7 +76,7 @@ const extendedDeviDetails = {
     gayatriSanskrit: "ॐ भेरुण्डायै विद्महे विषहरायै धीमहि तन्नो नित्या प्रचोदयात्",
     gayatriTamil: "ஓம் பேருண்டாயை வித்மஹே விஷஹராயை தீமஹி தன்னோ நித்யா ப்ரசோதயாத்",
     gayatriEn: "Om Bherundayai Vidmahe Vishaharayai Dhimahi Tanno Nitya Prachodayat",
-    element: "🔱 Courage, Protection & Transformative Strength",
+    element: "Courage, Protection & Transformative Strength",
     meaningEn: "Associated with courage, protection and transformative strength.",
     meaningTa: "தைரியம், பாதுகாப்பு, எதிரிகள் தொல்லை மற்றும் துஷ்ட சக்திகளிடமிருந்து காக்கும் தீவிர சக்தி தேவி.",
     flower: "சிவப்பு அரளி (Red Oleander) & செவ்வந்தி",
@@ -95,7 +95,7 @@ const extendedDeviDetails = {
     gayatriSanskrit: "ॐ वह्निवासिन्यै विद्महे सिद्धिप्रदायै धीमहि तन्नो नित्या प्रचोदयात्",
     gayatriTamil: "ஓம் வஹ்னிவாஸின்யை வித்மஹே சித்திப்ரதாயை தீமஹி தன்னோ நித்யா ப்ரசோதயாத்",
     gayatriEn: "Om Vahnivasinyai Vidmahe Siddhipradayai Dhimahi Tanno Nitya Prachodayat",
-    element: "🔥 Purification, Vitality & Radiant Energy",
+    element: "Purification, Vitality & Radiant Energy",
     meaningEn: "Associated with purification, vitality and spiritual illumination.",
     meaningTa: "தூய்மை, தேக காந்தி, ஆத்ம ஞானம் மற்றும் சுடரொளி ஆற்றல் வழங்கி அருளும் தேவி.",
     flower: "பவளமல்லி & செவ்வரளி மலர்",
@@ -114,7 +114,7 @@ const extendedDeviDetails = {
     gayatriSanskrit: "ॐ महावज्रेश्वर्यै विद्महे वज्रनित्यायै धीमहि तन्नो नित्या प्रचोदयात्",
     gayatriTamil: "ஓம் மஹா வஜ்ரேஸ்வர்யை வித்மஹே வஜ்ர நித்யாயை தீமஹி தன்னோ நித்யா ப்ரசோதயாத்",
     gayatriEn: "Om Mahavajreshvaryai Vidmahe Vajranityayai Dhimahi Tanno Nitya Prachodayat",
-    element: "⚡ Firmness, Prosperity & Indestructible Power",
+    element: "Firmness, Prosperity & Indestructible Power",
     meaningEn: "Associated with firmness, prosperity and protection.",
     meaningTa: "வஜ்ரம் போன்ற ஸ்திரத்தன்மை, பெரும் செல்வம், தொழில் வளர்ச்சி மற்றும் கடன் தீர்க்கும் தேவி.",
     flower: "மஞ்சள் தாமரை & நந்தியாவட்டை மலர்",
@@ -133,7 +133,7 @@ const extendedDeviDetails = {
     gayatriSanskrit: "ॐ शिवदूत्यै विद्महे शिवङ्कर्यै धीमहि तन्नो नित्या प्रचोदयात्",
     gayatriTamil: "ஓம் சிவதூத்யை வித்மஹே சிவங்கர்யை தீமஹி தன்னோ நித்யா ப்ரசோதயாத்",
     gayatriEn: "Om Shivadutyai Vidmahe Shivankaryai Dhimahi Tanno Nitya Prachodayat",
-    element: "🌑 Fearless Transformation & Removal of Negativity",
+    element: "Fearless Transformation & Removal of Negativity",
     meaningEn: "Associated with fearless transformation and removal of negativity.",
     meaningTa: "பயமின்மை, தீராத நோய் மற்றும் கஷ்டங்கள் நீக்கி சுப மாற்றங்கள் அருளும் தூதுவி.",
     flower: "நீல சங்குப்பூ (Aparajita) & வில்வ இலை (Bilva)",
@@ -152,7 +152,7 @@ const extendedDeviDetails = {
     gayatriSanskrit: "ॐ त्वरितायै विद्महे महानित्यायै धीमहि तन्नो नित्या प्रचोदयात्",
     gayatriTamil: "ஓம் த்வரிதாயை வித்மஹே மஹாநித்யாயை தீமஹி தன்னோ நித்யா ப்ரசோதயாத்",
     gayatriEn: "Om Tvaritayai Vidmahe Mahanityayai Dhimahi Tanno Nitya Prachodayat",
-    element: "💨 Swiftness, Speed & Quick Resolution",
+    element: "Swiftness, Speed & Quick Resolution",
     meaningEn: "Associated with swiftness, movement and overcoming delay.",
     meaningTa: "வேகம், காரிய தாமதங்கள் நீக்குதல், உடனே வேலை வாய்ப்பு மற்றும் திருமணம் கை கூட அருளும் தேவி.",
     flower: "துளசி (Tulsi), மரிக்கொழுந்து & பச்சை மலர்கள்",
@@ -171,7 +171,7 @@ const extendedDeviDetails = {
     gayatriSanskrit: "ॐ कुलसुन्दर्यै विद्महे कामेश्वर्यै धीमहि तन्नो शक्तिः प्रचोदयात्",
     gayatriTamil: "ஓம் குலசுந்தர்யை வித்மஹே காமேஸ்வர்யை தீமஹி தன்னோ சக்தி ப்ரசோதயாத்",
     gayatriEn: "Om Kulasundaryai Vidmahe Kameshvaryai Dhimahi Tanno Shaktih Prachodayat",
-    element: "📿 Higher Knowledge, Intellect & Wisdom",
+    element: "Higher Knowledge, Intellect & Wisdom",
     meaningEn: "Associated with knowledge, refinement and higher wisdom.",
     meaningTa: "கல்வி, உயர்ந்த அறிவு, பேச்சுத் திறன், கலை மற்றும் ஞான சித்தி அருளும் தேவி.",
     flower: "வெண்தாமரை (White Lotus) & முல்லை மலர்",
@@ -190,7 +190,7 @@ const extendedDeviDetails = {
     gayatriSanskrit: "ॐ नित्यायै विद्महे ज्ञानरूपायै धीमहि तन्नो देवी प्रचोदयात्",
     gayatriTamil: "ஓம் நித்யாயை வித்மஹே ஞானரூபாயை தீமஹி தன்னோ தேவி ப்ரசோதயாத்",
     gayatriEn: "Om Nityayai Vidmahe Jnanarupayai Dhimahi Tanno Devi Prachodayat",
-    element: "🌙 Steadiness, Focus & Eternal Peace",
+    element: "Steadiness, Focus & Eternal Peace",
     meaningEn: "Associated with steadiness, focus and continuity.",
     meaningTa: "மன ஸ்திரத்தன்மை, குடும்ப அமைதி, யோக சித்தி மற்றும் பயமற்ற வாழ்வு அருளும் நித்ய சக்தி.",
     flower: "மருதாணி பூ & வெண்தாமரை",
@@ -209,7 +209,7 @@ const extendedDeviDetails = {
     gayatriSanskrit: "ॐ नीलपताकायै विद्महे महानित्यायै धीमहि तन्नो देवी प्रचोदयात्",
     gayatriTamil: "ஓம் நீலபதாகாயை வித்மஹே மஹாநித்யாயை தீமஹி தன்னோ தேவி ப்ரசோதயாத்",
     gayatriEn: "Om Nilapatakayai Vidmahe Mahanityayai Dhimahi Tanno Devi Prachodayat",
-    element: "🏳️ Victory Over Obstacles & Triumph",
+    element: "️ Victory Over Obstacles & Triumph",
     meaningEn: "Associated with victory over obstacles and discipline.",
     meaningTa: "தடைகள் நீக்கி காரிய வெற்றி, வழக்கு மற்றும் தொழில் போட்டிகளில் வெற்றி அருளும் தேவி.",
     flower: "நீலோத்பலம் (Blue Water Lily) & நீல சங்குப்பூ",
@@ -228,7 +228,7 @@ const extendedDeviDetails = {
     gayatriSanskrit: "ॐ विजयादेव्यै विद्महे महानित्यायै धीमहि तन्नो देवी प्रचोदयात्",
     gayatriTamil: "ஓம் விஜயாதேவ்யை வித்மஹே மஹாநித்யாயை தீமஹி தன்னோ தேவி ப்ரசோதயாத்",
     gayatriEn: "Om Vijayadevyai Vidmahe Mahanityayai Dhimahi Tanno Devi Prachodayat",
-    element: "🌿 Ultimate Success & Supreme Achievement",
+    element: "Ultimate Success & Supreme Achievement",
     meaningEn: "Associated with success and ultimate achievement in all endeavors.",
     meaningTa: "தொட்ட காரியங்களில் பூரண வெற்றி, பதவி உயர்வு மற்றும் சுப லாபங்கள் அருளும் வெற்ற நாயகி.",
     flower: "செவ்வரளி & துளசி மாலை",
@@ -247,7 +247,7 @@ const extendedDeviDetails = {
     gayatriSanskrit: "ॐ सर्वमङ्गलायै विद्महे चन्द्रात्मिकायै धीमहि तन्नो नित्या प्रचोदयात्",
     gayatriTamil: "ஓம் சர்வமங்களாயை வித்மஹே சந்த்ராத்மிகாயை தீமஹி தன்னோ நித்யா ப்ரசோதயாத்",
     gayatriEn: "Om Sarvamangalayai Vidmahe Chandratmikayai Dhimahi Tanno Nitya Prachodayat",
-    element: "🌞 All-Auspiciousness & Family Harmony",
+    element: "All-Auspiciousness & Family Harmony",
     meaningEn: "Associated with auspiciousness, harmony and total well-being.",
     meaningTa: "சர்வ மங்கள யோகம், தீர்க்க சுமங்கலி பாக்கியம் மற்றும் சகல ஐஸ்வர்யங்களும் அருளும் தேவி.",
     flower: "மஞ்சள் ரோஜா & மணமுள்ள மல்லிகை",
@@ -266,7 +266,7 @@ const extendedDeviDetails = {
     gayatriSanskrit: "ॐ ज्वालामालिन्यै विद्महे महाज्वालायै धीमहि तन्नो देवी प्रचोदयात्",
     gayatriTamil: "ஓம் ஜ்வாலாமாலின்யை வித்மஹே மஹாஜ்வாலாயை தீமஹி தன்னோ தேவி ப்ரசோதயாத்",
     gayatriEn: "Om Jwalamalinyai Vidmahe Mahajwalayai Dhimahi Tanno Devi Prachodayat",
-    element: "🔥 Fiery Protection & Spiritual Shield",
+    element: "Fiery Protection & Spiritual Shield",
     meaningEn: "Associated with fiery protection, warding off evil eye and negative energies.",
     meaningTa: "கண் திருஷ்டி நீக்கம், பில்லி சூன்ய பயம் நீக்கி பாதுகாக்கும் ஜ்வாலா சக்தி தேவி.",
     flower: "செந்தாமரை & அடர் சிவப்பு ரோஜா",
@@ -285,7 +285,7 @@ const extendedDeviDetails = {
     gayatriSanskrit: "ॐ विचित्रायै विद्महे महानित्यायै धीमहि तन्नो देवी प्रचोदयात्",
     gayatriTamil: "ஓம் விசித்ராயை வித்மஹே மஹாநித்யாயை தீமஹி தன்னோ தேவி ப்ரசோதயாத்",
     gayatriEn: "Om Vichitrayai Vidmahe Mahanityayai Dhimahi Tanno Devi Prachodayat",
-    element: "🎨 Multi-faceted Beauty, Art & Creativity",
+    element: "Multi-faceted Beauty, Art & Creativity",
     meaningEn: "Associated with multifaceted beauty, artistic talents and charm.",
     meaningTa: "அழகு, கலை படைப்பாற்றல், வசீகரம் மற்றும் புதிய சுப யோசனைகள் வெற்றி பெற அருளும் தேவி.",
     flower: "பலவண்ண நறுமண மலர்கள் (Colorful Flowers)",
@@ -304,7 +304,7 @@ const extendedDeviDetails = {
     gayatriSanskrit: "ॐ त्रिपुरासुन्दर्यै विद्महे कामेश्वर्यै धीमहि तन्नो क्लिन्ना प्रचोदयात्",
     gayatriTamil: "ஓம் திரிபுரசுந்தர்யை வித்மஹே காமேஸ்வர்யை தீமஹி தன்னோ க்லின்னா ப்ரசோதயாத்",
     gayatriEn: "Om Tripurasundaryai Vidmahe Kameshvaryai Dhimahi Tanno Klinna Prachodayat",
-    element: "👑 Supreme Completeness, Lalita Principle & Liberation",
+    element: "Supreme Completeness, Lalita Principle & Liberation",
     meaningEn: "Represents fullness, completeness and the supreme Lalita principle.",
     meaningTa: "சர்வ பரிபூரணம், மோட்சம், ஸ்ரீ வித்யா பரமேஸ்வரியின் பேரருள் மற்றும் சகல யோகங்கள்.",
     flower: "செந்தாமரை (Red Lotus) & கடம்ப மலர்",
@@ -417,7 +417,7 @@ function calculateAndRenderResult(dob, tob, tz) {
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं श्रीं नमः",
     mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் ஸ்ரீம் நமஹ",
     mantraEn: "Om Aim Hrim Klim Shrim Namah",
-    element: "👑 Supreme Cosmic Grace",
+    element: "Supreme Cosmic Grace",
     meaningEn: meanings[deviName] || "",
     meaningTa: "தேவியின் பரிபூரண அருளும் சுப பலன்களும்.",
     flower: "செந்தாமரை & நறுமண மலர்கள்",
@@ -447,7 +447,10 @@ function calculateAndRenderResult(dob, tob, tz) {
     nameEl.textContent = `${deviName} Nitya`;
   }
   if (tamilEl) tamilEl.textContent = devi[1];
-  if (elemEl) elemEl.textContent = data.element;
+  if (elemEl) {
+    const cleanElement = (data.element || "").replace(/[\u{1F300}-\u{1F9FF}\u{2600}-\u{26FF}\u{2700}-\u{27BF}]/gu, '').trim();
+    elemEl.innerHTML = `<svg class="icon icon-stroke elem-badge-icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg><span>${cleanElement}</span>`;
+  }
 
   const tithiLabel = num === 15 ? (isShukla ? "Poornima / பௌர்ணமி" : "Amavasya / அமாவாசை") : tithiNames[num - 1];
   if (tithiEl) tithiEl.textContent = `${num}. ${tithiLabel}`;
@@ -733,7 +736,9 @@ function setJapaLanguage(lang) {
     // scriptBoxTamil etc. are now <button> tab elements — skip class toggling
     const tag = document.getElementById(blockMap[k].tagId);
     if (tag) {
-      tag.textContent = (k === lang) ? "🔊 Chanting Active" : "Click to Select";
+      tag.innerHTML = (k === lang)
+        ? `<svg class="icon icon-stroke" style="width:13px;height:13px;vertical-align:-1px;" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg> Chanting Active`
+        : "Click to Select";
     }
   });
 
@@ -876,7 +881,7 @@ function stepJapaChant() {
   const recitation = getMantraToRecite();
 
   if (statusMsg) {
-    statusMsg.innerHTML = `<span style="color:#ffd764; font-weight:700;">🔊 Chanting (${japaCount + 1}/108):</span> <span style="color:#ffffff; font-weight:600;">"${recitation.displayText}"</span>`;
+    statusMsg.innerHTML = `<span style="color:#ffd764; font-weight:700; display:inline-flex; align-items:center; gap:5px;"><svg class="icon icon-stroke" style="width:14px;height:14px;vertical-align:-2px;" viewBox="0 0 24 24"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg> Chanting (${japaCount + 1}/108):</span> <span style="color:#ffffff; font-weight:600;">"${recitation.displayText}"</span>`;
   }
 
   // Soft background temple bell for each chant
@@ -1046,7 +1051,7 @@ function finishJapa() {
   if (btnText) btnText.textContent = "Restart 108 Japa";
 
   if (statusMsg) {
-    statusMsg.innerHTML = "<strong>✨ 108 முறை மூல மந்திர ஜபம் பூர்த்தியடைந்தது! (108 Japa Completed!)<br>தேவியின் பரிபூரண அருள் உண்டாகட்டும் — Divine blessings and abundance illuminate your life!</strong>";
+    statusMsg.innerHTML = `<strong><svg class="icon icon-stroke" style="width:16px;height:16px;color:#10b981;vertical-align:-2px;" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> 108 முறை மூல மந்திர ஜபம் பூர்த்தியடைந்தது! (108 Japa Completed!)<br>தேவியின் பரிபூரண அருள் உண்டாகட்டும் — Divine blessings and abundance illuminate your life!</strong>`;
     statusMsg.style.color = "#10b981";
   }
 

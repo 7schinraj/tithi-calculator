@@ -130,14 +130,12 @@ body {
   stroke-linejoin: round;
 }
 
-/* Fixed Global Theme Bar & Toggle Button */
-.global-theme-bar {
-  position: fixed;
-  top: 18px;
-  right: 24px;
-  z-index: 999;
-  display: flex;
-  align-items: center;
+/* Fixed Global Theme Bar & Toggle Button — Hidden as Dark Theme is permanent */
+.global-theme-bar,
+.theme-toggle-btn,
+.btn-theme-toggle,
+#themeToggle {
+  display: none !important;
 }
 
 .theme-toggle-btn {
@@ -5582,7 +5580,24 @@ tr:last-child td {
   flex: 1;
   min-width: 120px;
 }
-.bp-icon { font-size: 20px; flex-shrink: 0; }
+.bp-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  background: rgba(255, 215, 100, 0.1);
+  border: 1px solid rgba(255, 215, 100, 0.25);
+  color: #ffd764;
+  flex-shrink: 0;
+}
+.bp-icon svg,
+.bp-svg {
+  width: 18px;
+  height: 18px;
+  color: #ffd764;
+}
 .bp-info { display: flex; flex-direction: column; gap: 1px; }
 .bp-label {
   font-family: 'Mukta Malar', sans-serif;
@@ -5614,7 +5629,23 @@ tr:last-child td {
   border: 1px solid rgba(255, 215, 100, 0.3) !important;
   border-radius: 12px; flex-wrap: wrap;
 }
-.blessings-label { font-size: 12px; font-weight: 800; color: #ffd764 !important; white-space: nowrap; flex-shrink: 0; }
+.blessings-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 800;
+  color: #ffd764 !important;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.blessings-label svg,
+.blessings-svg {
+  width: 15px;
+  height: 15px;
+  color: #ffd764;
+  flex-shrink: 0;
+}
 .blessings-text { font-family: 'Mukta Malar', sans-serif; font-size: 14px; font-weight: 700; color: #ffffff !important; line-height: 1.5; }
 
 /* Compact Meaning Block */
@@ -5642,7 +5673,23 @@ tr:last-child td {
   background: rgba(255, 215, 100, 0.08) !important;
   border-color: rgba(255, 215, 100, 0.25) !important;
 }
-.ca-icon { font-size: 18px; flex-shrink: 0; }
+.ca-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(255, 215, 100, 0.1);
+  border: 1px solid rgba(255, 215, 100, 0.2);
+  color: #ffd764;
+  flex-shrink: 0;
+}
+.ca-icon svg {
+  width: 17px;
+  height: 17px;
+  color: #ffd764;
+}
 .ca-label {
   font-family: 'Mukta Malar', sans-serif; font-size: 12px; font-weight: 700;
   color: #ffaa44 !important; text-transform: uppercase; letter-spacing: 0.03em; min-width: 130px;
@@ -5757,4 +5804,96 @@ details[open] .gayatri-summary::after { transform: rotate(-180deg); }
   .birth-params-report-badge { margin-left: 0; width: 100%; text-align: center; }
   .ca-val { margin-left: 0; text-align: left; }
   .devi-blessings-bar { flex-direction: column; gap: 4px; }
+}
+
+/* =======================================================
+   SVG ICON ENHANCEMENTS FOR RESULT PAGE & METRICS
+   ======================================================= */
+
+.psc-flame-icon,
+.psc-header svg {
+  width: 16px;
+  height: 16px;
+  color: #ffd764;
+  flex-shrink: 0;
+}
+
+.elem-badge-icon {
+  width: 16px;
+  height: 16px;
+  color: #ffd764;
+  flex-shrink: 0;
+  vertical-align: -2px;
+}
+
+.res-element-badge {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 8px !important;
+}
+
+.astro-svg {
+  width: 14px;
+  height: 14px;
+  color: #ffaa44;
+  flex-shrink: 0;
+  vertical-align: -2px;
+}
+
+.badge-title {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+}
+
+.card-icon-box svg {
+  width: 22px;
+  height: 22px;
+  color: #ffd764;
+}
+
+.japa-title {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+.japa-title-icon {
+  width: 18px;
+  height: 18px;
+  color: #ffd764;
+  flex-shrink: 0;
+}
+
+.chant-badge-icon svg {
+  width: 22px;
+  height: 22px;
+  color: #ffd764;
+}
+
+.active-chant-banner.chanting .chant-badge-icon svg {
+  color: #120624;
+}
+
+.gayatri-sum-icon {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 20px;
+  height: 20px;
+  color: #ffd764;
+  flex-shrink: 0;
+}
+
+.gayatri-sum-icon svg {
+  width: 16px;
+  height: 16px;
+  color: #ffd764;
+}
+
+.pooja-card-icon svg {
+  width: 22px;
+  height: 22px;
+  color: #ffd764;
 }
