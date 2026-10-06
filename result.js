@@ -12,7 +12,7 @@ const extendedDeviDetails = {
     color: "#e91e8c",
     colorAlt: "#ff6ec7",
     glow: "rgba(233,30,140,0.45)",
-    image: "images/kameshvari.jpg",
+    image: "images/img1.jpeg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं कामेश्वर्यै नमः",
     mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் காமேஸ்வர்யை நமஹ",
     mantraEn: "Om Aim Hrim Klim Kameshvaryai Namah",
@@ -31,7 +31,7 @@ const extendedDeviDetails = {
     color: "#f59e0b",
     colorAlt: "#fcd34d",
     glow: "rgba(245,158,11,0.45)",
-    image: "images/bhagamalini.jpg",
+    image: "images/img2.jpeg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं भगमालिन्यै नमः",
     mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் பகமாலின்யை நமஹ",
     mantraEn: "Om Aim Hrim Klim Bhagamalinyai Namah",
@@ -50,7 +50,7 @@ const extendedDeviDetails = {
     color: "#3b82f6",
     colorAlt: "#93c5fd",
     glow: "rgba(59,130,246,0.45)",
-    image: "images/nityaklinna.jpg",
+    image: "images/img3.jpeg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं नित्यक्लिन्नायै नमः",
     mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் நித்யக்லின்னாயை நமஹ",
     mantraEn: "Om Aim Hrim Klim Nityaklinnayai Namah",
@@ -69,7 +69,7 @@ const extendedDeviDetails = {
     color: "#dc2626",
     colorAlt: "#fca5a5",
     glow: "rgba(220,38,38,0.45)",
-    image: "images/bherunda.jpg",
+    image: "images/img4.jpeg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं भेरुण्डायै नमः",
     mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் பேருண்டாயை நமஹ",
     mantraEn: "Om Aim Hrim Klim Bherundayai Namah",
@@ -88,7 +88,7 @@ const extendedDeviDetails = {
     color: "#f97316",
     colorAlt: "#fdba74",
     glow: "rgba(249,115,22,0.45)",
-    image: "images/vahnivasini.jpg",
+    image: "images/img5.jpeg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं वह्निवासिन्यै नमः",
     mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் வஹ்னிவாஸின்யை நமஹ",
     mantraEn: "Om Aim Hrim Klim Vahnivasinyai Namah",
@@ -107,7 +107,7 @@ const extendedDeviDetails = {
     color: "#d4a017",
     colorAlt: "#fde68a",
     glow: "rgba(212,160,23,0.45)",
-    image: "images/mahavajreshvari.jpg",
+    image: "images/img6.jpeg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं महावज्रेश्वर्यै नमः",
     mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் மஹா வஜ்ரேஸ்வர்யை நமஹ",
     mantraEn: "Om Aim Hrim Klim Mahavajreshvaryai Namah",
@@ -126,7 +126,7 @@ const extendedDeviDetails = {
     color: "#7c3aed",
     colorAlt: "#c4b5fd",
     glow: "rgba(124,58,237,0.45)",
-    image: "images/shivaduti.jpg",
+    image: "images/img7.jpeg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं शिवदूत्यै नमः",
     mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் சிவதூத்யை நமஹ",
     mantraEn: "Om Aim Hrim Klim Shivadutyai Namah",
@@ -145,7 +145,7 @@ const extendedDeviDetails = {
     color: "#0d9488",
     colorAlt: "#5eead4",
     glow: "rgba(13,148,136,0.45)",
-    image: "images/tvarita.jpg",
+    image: "images/img8.jpeg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं त्वरितायै नमः",
     mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் த்வரிதாயை நமஹ",
     mantraEn: "Om Aim Hrim Klim Tvaritayai Namah",
@@ -164,7 +164,7 @@ const extendedDeviDetails = {
     color: "#db2777",
     colorAlt: "#f9a8d4",
     glow: "rgba(219,39,119,0.45)",
-    image: "images/kulasundari.jpg",
+    image: "images/img9.jpeg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं कुलसुन्दर्यै नमः",
     mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் குலசுந்தர்யை நமஹ",
     mantraEn: "Om Aim Hrim Klim Kulasundaryai Namah",
@@ -183,7 +183,7 @@ const extendedDeviDetails = {
     color: "#64748b",
     colorAlt: "#cbd5e1",
     glow: "rgba(100,116,139,0.45)",
-    image: "images/nitya.jpg",
+    image: "images/img10.jpeg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं नित्यायै नमः",
     mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் நித்யாயை நமஹ",
     mantraEn: "Om Aim Hrim Klim Nityayai Namah",
@@ -202,7 +202,7 @@ const extendedDeviDetails = {
     color: "#4338ca",
     colorAlt: "#a5b4fc",
     glow: "rgba(67,56,202,0.45)",
-    image: "images/nilapataka.jpg",
+    image: "images/img11.jpeg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं नीलपताकायै नमः",
     mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் நீலபதாகாயை நமஹ",
     mantraEn: "Om Aim Hrim Klim Nilapatakayai Namah",
@@ -221,7 +221,7 @@ const extendedDeviDetails = {
     color: "#059669",
     colorAlt: "#6ee7b7",
     glow: "rgba(5,150,105,0.45)",
-    image: "images/vijaya.jpg",
+    image: "images/img12.jpeg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं विजयायै नमः",
     mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் விஜயாயை நமஹ",
     mantraEn: "Om Aim Hrim Klim Vijayayai Namah",
@@ -240,7 +240,7 @@ const extendedDeviDetails = {
     color: "#b45309",
     colorAlt: "#fcd34d",
     glow: "rgba(180,83,9,0.45)",
-    image: "images/sarvamangala.jpg",
+    image: "images/img13.jpeg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं सर्वमङ्गलायै नमः",
     mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் சர்வமங்களாயை நமஹ",
     mantraEn: "Om Aim Hrim Klim Sarvamangalayai Namah",
@@ -259,7 +259,7 @@ const extendedDeviDetails = {
     color: "#ef4444",
     colorAlt: "#fca5a5",
     glow: "rgba(239,68,68,0.45)",
-    image: "images/jwalamalini.jpg",
+    image: "images/img14.jpeg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं ज्वालामालिन्यै नमः",
     mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் ஜ்வாலாமாலின்யை நமஹ",
     mantraEn: "Om Aim Hrim Klim Jwalamalinyai Namah",
@@ -278,7 +278,7 @@ const extendedDeviDetails = {
     color: "#0284c7",
     colorAlt: "#7dd3fc",
     glow: "rgba(2,132,199,0.45)",
-    image: "images/chitra.jpg",
+    image: "images/img15.jpeg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं चित्रायै नमः",
     mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் சித்ராயை நமஹ",
     mantraEn: "Om Aim Hrim Klim Chitrayai Namah",
@@ -297,7 +297,7 @@ const extendedDeviDetails = {
     color: "#9333ea",
     colorAlt: "#d8b4fe",
     glow: "rgba(147,51,234,0.45)",
-    image: "images/maha_tripura_sundari.jpg",
+    image: "images/img16.jpg",
     mantraSanskrit: "ॐ ऐं ह्रीं श्रीं महात्रिपुरसुन्दर्यै नमः",
     mantraTamil: "ஓம் ஐம் ஹ்ரீம் ஸ்ரீம் மஹா திரிபுரசுந்தர்யை நமஹ",
     mantraEn: "Om Aim Hrim Shrim Maha Tripura Sundaryai Namah",
@@ -513,10 +513,14 @@ function calculateAndRenderResult(dob, tob, tz) {
   const mantraSktEl = document.getElementById("resMantraSanskrit");
   const mantraTamEl = document.getElementById("resMantraTamil");
   const mantraEnEl = document.getElementById("resMantraEn");
+  const heroMantraTamilTextEl = document.getElementById("heroMantraTamilText");
+  const heroMantraSanskritTextEl = document.getElementById("heroMantraSanskritText");
 
   if (mantraSktEl) mantraSktEl.textContent = data.mantraSanskrit;
   if (mantraTamEl) mantraTamEl.textContent = data.mantraTamil;
   if (mantraEnEl) mantraEnEl.textContent = data.mantraEn;
+  if (heroMantraTamilTextEl) heroMantraTamilTextEl.textContent = data.mantraTamil;
+  if (heroMantraSanskritTextEl) heroMantraSanskritTextEl.textContent = data.mantraSanskrit;
 
   // Populate Gayatri Mantras
   const gayatriTamEl = document.getElementById("resGayatriTamil");

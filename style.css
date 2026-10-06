@@ -1085,7 +1085,8 @@ tr:last-child td {
   content: '';
   position: absolute;
   inset: 0;
-  background-image: url('hero_goddess.jpg');
+  /* background-image: url('hero_goddess.jpg'); Removed per user request to hide AI images */
+  background: radial-gradient(circle at top, rgba(255, 215, 100, 0.1) 0%, transparent 60%);
   background-size: cover;
   background-position: center top;
   opacity: 0.35;
@@ -4073,10 +4074,11 @@ tr:last-child td {
   content: '';
   position: fixed;
   inset: 0;
-  background-image: url('hero_goddess.jpg');
+  /* background-image: url('hero_goddess.jpg'); Removed per user request to hide AI images */
+  background: radial-gradient(ellipse at top center, rgba(147, 51, 234, 0.05) 0%, transparent 60%);
   background-size: cover;
   background-position: center top;
-  opacity: 0.14;
+  opacity: 0.5;
   z-index: 0;
   pointer-events: none;
 }
