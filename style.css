@@ -5899,3 +5899,189 @@ details[open] .gayatri-summary::after { transform: rotate(-180deg); }
   height: 22px;
   color: #ffd764;
 }
+
+
+/* Initial Page Loader */
+.initial-page-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg-gradient, #0e0914);
+  z-index: 999999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease;
+}
+
+.initial-loader-text {
+  color: #ffd764;
+  margin-top: 20px;
+  font-family: var(--font-heading);
+  font-size: 24px;
+  letter-spacing: 2px;
+  animation: pulseOmAnim 2s infinite alternate;
+}
+
+@keyframes pulseOmAnim {
+  0% { transform: scale(0.95); opacity: 0.8; }
+  100% { transform: scale(1.1); opacity: 1; text-shadow: 0 0 35px rgba(255, 215, 100, 0.9); }
+}
+
+/* Spiritual Preloader (Gimmicks/Aanmeegam) */
+.spiritual-preloader {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 40px auto;
+}
+
+.yantra-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  border-top-color: #ffd764;
+  border-bottom-color: #ffaa44;
+  animation: spinYantra 4s linear infinite;
+  box-shadow: 0 0 20px rgba(255, 215, 100, 0.4);
+}
+
+.yantra-ring.reverse {
+  width: 85%;
+  height: 85%;
+  border-top-color: #ff8fd4;
+  border-bottom-color: #b382d9;
+  animation: spinYantraReverse 3s linear infinite;
+}
+
+@keyframes spinYantra {
+  100% { transform: rotate(360deg); }
+}
+@keyframes spinYantraReverse {
+  100% { transform: rotate(-360deg); }
+}
+
+.om-glowing {
+  position: absolute;
+  font-size: 60px;
+  color: #fff;
+  text-shadow: 0 0 20px #ffd764, 0 0 40px #ffaa44, 0 0 60px #ff8fd4;
+  animation: pulseDivine 2s ease-in-out infinite alternate;
+  z-index: 10;
+  line-height: 1;
+}
+
+@keyframes pulseDivine {
+  0% { transform: scale(0.9); opacity: 0.8; filter: hue-rotate(0deg); }
+  100% { transform: scale(1.15); opacity: 1; filter: hue-rotate(30deg); }
+}
+
+/* Lotus */
+.lotus {
+  position: absolute;
+  width: 120px;
+  height: 120px;
+  z-index: 5;
+  animation: breatheLotus 4s ease-in-out infinite alternate;
+}
+
+.petal {
+  position: absolute;
+  width: 40px;
+  height: 100px;
+  background: linear-gradient(to top, rgba(255,143,212,0.8), rgba(255,215,100,0.2));
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  top: 10px;
+  left: 40px;
+  transform-origin: bottom center;
+  box-shadow: 0 0 15px rgba(255, 143, 212, 0.5);
+  mix-blend-mode: screen;
+}
+
+.petal-1 { transform: rotate(0deg); }
+.petal-2 { transform: rotate(60deg); }
+.petal-3 { transform: rotate(120deg); }
+.petal-4 { transform: rotate(180deg); }
+.petal-5 { transform: rotate(240deg); }
+.petal-6 { transform: rotate(300deg); }
+
+@keyframes breatheLotus {
+  0% { transform: scale(0.8) rotate(0deg); }
+  100% { transform: scale(1.1) rotate(15deg); }
+}
+
+/* Magic Particles (Gimmicks) */
+.magic-particles {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 15;
+}
+
+.particle {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  box-shadow: 0 0 10px 3px #fff, 0 0 20px 5px #ffd764;
+  opacity: 0;
+}
+
+.p1 { top: 10%; left: 50%; animation: magicFloat 3s infinite 0.1s; }
+.p2 { top: 50%; left: 90%; animation: magicFloat 3s infinite 0.5s; }
+.p3 { top: 90%; left: 50%; animation: magicFloat 3s infinite 0.9s; }
+.p4 { top: 50%; left: 10%; animation: magicFloat 3s infinite 1.3s; }
+.p5 { top: 25%; left: 80%; animation: magicFloat 3s infinite 1.7s; }
+
+@keyframes magicFloat {
+  0% { transform: translate(0, 0) scale(0); opacity: 0; }
+  50% { transform: translate(15px, -15px) scale(1.5); opacity: 1; }
+  100% { transform: translate(30px, -30px) scale(0); opacity: 0; }
+}
+
+/* Custom Time Picker */
+.custom-time-picker {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  gap: 4px;
+}
+
+.time-select {
+  appearance: none;
+  background: var(--card-bg);
+  border: 1px solid var(--line-border);
+  color: var(--input-text);
+  border-radius: var(--radius-sm);
+  padding: 4px 8px;
+  font-size: 14px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  cursor: pointer;
+  outline: none;
+  text-align: center;
+}
+
+.time-select:hover, .time-select:focus {
+  border-color: var(--purple-primary);
+  box-shadow: 0 0 0 2px var(--purple-glow);
+}
+
+.time-select.ampm {
+  margin-left: 4px;
+  color: var(--emerald-primary);
+}
+
+.time-colon {
+  color: var(--ink-muted);
+  font-weight: bold;
+}
