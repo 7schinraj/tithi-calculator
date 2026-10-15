@@ -22,8 +22,8 @@
   <link rel="stylesheet" href="style.css">
 
   <!-- Astronomy & Timezone CDN Libraries -->
-  <script src="https://cdn.jsdelivr.net/npm/luxon@3.5.0/build/global/luxon.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/astronomy-engine@2.1.19/astronomy.browser.min.js"></script>
+  <script src="vendor/luxon.min.js"></script>
+  <script src="vendor/astronomy.browser.min.js"></script>
 
   <!-- Three.js 3D Library for Cosmic Geometry & Animations -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
@@ -254,7 +254,8 @@
                     <option value="" disabled selected>Min</option>
                   </select>
                   <select id="tobAmPm" class="time-select ampm">
-                    <option value="AM" selected>AM</option>
+                    <option value="" disabled selected>AM/PM</option>
+                    <option value="AM">AM</option>
                     <option value="PM">PM</option>
                   </select>
                 </div>
@@ -617,7 +618,7 @@
       }
 
       function syncTime() {
-        if (!tobHour.value || !tobMinute.value) {
+        if (!tobHour.value || !tobMinute.value || !tobAmPm.value) {
           tobHidden.value = '';
           return;
         }

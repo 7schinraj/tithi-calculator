@@ -12,7 +12,7 @@ const extendedDeviDetails = {
     color: "#e91e8c",
     colorAlt: "#ff6ec7",
     glow: "rgba(233,30,140,0.45)",
-    image: "images/img1.jpeg",
+    image: "images/nitya/verified/kameshvari.jpeg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं कामेश्वर्यै नमः",
     mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் காமேஸ்வர்யை நமஹ",
     mantraEn: "Om Aim Hrim Klim Kameshvaryai Namah",
@@ -50,7 +50,7 @@ const extendedDeviDetails = {
     color: "#3b82f6",
     colorAlt: "#93c5fd",
     glow: "rgba(59,130,246,0.45)",
-    image: "images/img3.jpeg",
+    image: "images/nitya/verified/nityaklinna.jpeg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं नित्यक्लिन्नायै नमः",
     mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் நித்யக்லின்னாயை நமஹ",
     mantraEn: "Om Aim Hrim Klim Nityaklinnayai Namah",
@@ -69,7 +69,7 @@ const extendedDeviDetails = {
     color: "#dc2626",
     colorAlt: "#fca5a5",
     glow: "rgba(220,38,38,0.45)",
-    image: "images/img4.jpeg",
+    image: "images/nitya/verified/bherunda.jpeg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं भेरुण्डायै नमः",
     mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் பேருண்டாயை நமஹ",
     mantraEn: "Om Aim Hrim Klim Bherundayai Namah",
@@ -183,7 +183,7 @@ const extendedDeviDetails = {
     color: "#64748b",
     colorAlt: "#cbd5e1",
     glow: "rgba(100,116,139,0.45)",
-    image: "images/img10.jpeg",
+    image: "images/nitya/verified/nitya.jpeg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं नित्यायै नमः",
     mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் நித்யாயை நமஹ",
     mantraEn: "Om Aim Hrim Klim Nityayai Namah",
@@ -202,7 +202,7 @@ const extendedDeviDetails = {
     color: "#4338ca",
     colorAlt: "#a5b4fc",
     glow: "rgba(67,56,202,0.45)",
-    image: "images/img11.jpeg",
+    image: "images/nitya/verified/nilapataka.jpeg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं नीलपताकायै नमः",
     mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் நீலபதாகாயை நமஹ",
     mantraEn: "Om Aim Hrim Klim Nilapatakayai Namah",
@@ -259,7 +259,7 @@ const extendedDeviDetails = {
     color: "#ef4444",
     colorAlt: "#fca5a5",
     glow: "rgba(239,68,68,0.45)",
-    image: "images/img14.jpeg",
+    image: "images/nitya/verified/jvalamalini.jpeg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं ज्वालामालिन्यै नमः",
     mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் ஜ்வாலாமாலின்யை நமஹ",
     mantraEn: "Om Aim Hrim Klim Jwalamalinyai Namah",
@@ -278,7 +278,7 @@ const extendedDeviDetails = {
     color: "#0284c7",
     colorAlt: "#7dd3fc",
     glow: "rgba(2,132,199,0.45)",
-    image: "images/img15.jpeg",
+    image: "images/nitya/verified/chitra.jpeg",
     mantraSanskrit: "ॐ ऐं ह्रीं क्लीं चित्रायै नमः",
     mantraTamil: "ஓம் ஐம் ஹ்ரீம் க்ளீம் சித்ராயை நமஹ",
     mantraEn: "Om Aim Hrim Klim Chitrayai Namah",
@@ -328,9 +328,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // Parse Birth Parameters from URL or SessionStorage
   const params = new URLSearchParams(window.location.search);
-  const dob = params.get("dob") || sessionStorage.getItem("tithi_dob") || "1995-10-15";
-  const tob = params.get("tob") || sessionStorage.getItem("tithi_tob") || "08:30";
-  const tz = params.get("tz") || sessionStorage.getItem("tithi_tz") || "Asia/Kolkata";
+  const dob = params.get("dob") || sessionStorage.getItem("tithi_dob");
+  const tob = params.get("tob") || sessionStorage.getItem("tithi_tob");
+  const tz = params.get("tz") || sessionStorage.getItem("tithi_tz");
+  if (!dob || !tob || !tz) {
+    window.location.replace("index.html");
+    return;
+  }
   const place = params.get("place") || sessionStorage.getItem("tithi_place") || "Chennai, Tamil Nadu, India";
 
   // Update Summary Chip Bar
@@ -350,7 +354,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Run Astronomical Calculation
-  calculateAndRenderResult(dob, tob, tz);
+  const latRaw = params.get("lat") || sessionStorage.getItem("tithi_lat");
+  const lonRaw = params.get("lon") || sessionStorage.getItem("tithi_lon");
+  calculateAndRenderResult(dob, tob, tz, latRaw ? parseFloat(latRaw) : null, lonRaw ? parseFloat(lonRaw) : null);
 
   // Bind Actions
   initJapaAudioEngine();
@@ -377,28 +383,70 @@ function format12HourTime(timeStr) {
 /**
  * Perform Astronomy Engine Lunar Calculation and populate all Result Page DOM nodes
  */
-function calculateAndRenderResult(dob, tob, tz) {
-  let dt;
-  if (typeof luxon !== "undefined" && luxon.DateTime) {
-    dt = luxon.DateTime.fromISO(`${dob}T${tob}`, { zone: tz });
-  } else {
-    dt = new Date(`${dob}T${tob}`);
+function calculateAndRenderResult(dob, tob, tz, lat = null, lon = null) {
+  // No approximate fallbacks: a wrong tithi is worse than an error.
+  if (typeof luxon === "undefined" || !luxon.DateTime || typeof Astronomy === "undefined" || !Astronomy.MoonPhase) {
+    alert("Calculation libraries failed to load. Please check your internet connection and reload.");
+    return;
+  }
+  const dt = luxon.DateTime.fromISO(`${dob}T${tob}`, { zone: tz });
+  if (!dt.isValid) {
+    alert("Invalid birth date, time or time zone. Please go back and re-enter.");
+    window.location.replace("index.html");
+    return;
   }
 
-  const jsDate = dt.toJSDate ? dt.toJSDate() : new Date(dt);
-
-  let phase = 0;
-  if (typeof Astronomy !== "undefined" && Astronomy.MoonPhase) {
-    phase = Astronomy.MoonPhase(jsDate);
-  } else {
-    // Fallback calculation if library fails to load
-    const knownNewMoon = new Date("2026-01-18T18:00:00Z").getTime();
-    const diffDays = (jsDate.getTime() - knownNewMoon) / (1000 * 60 * 60 * 24);
-    const synodicMonth = 29.530588;
-    phase = ((diffDays % synodicMonth) / synodicMonth) * 360;
-  }
-
+  const jsDate = dt.toJSDate();
+  let phase = Astronomy.MoonPhase(jsDate);
   phase = ((phase % 360) + 360) % 360;
+
+  // Tithi start/end (Moon-Sun elongation crossing multiples of 12 deg), shown in birth timezone
+  const tithiIdx = Math.floor(phase / 12); // 0..29
+  const startAng = tithiIdx * 12;
+  const endAng = (startAng + 12) % 360;
+  let tithiTimesText = "";
+  try {
+    const startT = Astronomy.SearchMoonPhase(startAng, new Date(jsDate.getTime() - 2 * 86400000), 3);
+    const endT = Astronomy.SearchMoonPhase(endAng, jsDate, 2);
+    const fmt = (t) => luxon.DateTime.fromJSDate(t.date, { zone: tz }).toFormat("dd LLL yyyy, hh:mm a");
+    if (startT && endT) {
+      tithiTimesText = ` Tithi begins ${fmt(startT)} and ends ${fmt(endT)} (${tz}).`;
+      const minsToEdge = Math.min(
+        (jsDate - startT.date) / 60000,
+        (endT.date - jsDate) / 60000
+      );
+      if (minsToEdge < 30) {
+        tithiTimesText += " Note: birth time is within 30 minutes of a tithi change; please verify the exact birth time.";
+      }
+    }
+  } catch (e) {}
+
+  // UTC offset used + DST gap/overlap warning
+  tithiTimesText += ` Time zone used: ${tz} (UTC${dt.toFormat("ZZ")}).`;
+  const roundTrip = luxon.DateTime.fromJSDate(jsDate, { zone: tz }).toFormat("HH:mm");
+  if (roundTrip !== tob.slice(0, 5)) {
+    tithiTimesText += ` Warning: ${tob} does not exist in ${tz} on that date (daylight-saving change); it was treated as ${roundTrip}.`;
+  } else if (dt.plus({ hours: 1 }).offset < dt.offset || dt.minus({ hours: 1 }).offset > dt.offset) {
+    tithiTimesText += " Warning: this clock time occurred twice (daylight-saving change); the first occurrence was used.";
+  }
+
+  // Sunrise tithi of the birth date (needs birthplace coordinates)
+  if (lat !== null && lon !== null && !isNaN(lat) && !isNaN(lon)) {
+    try {
+      const obs = new Astronomy.Observer(lat, lon, 0);
+      const dayStart = luxon.DateTime.fromISO(dob, { zone: tz }).startOf("day").toJSDate();
+      const rise = Astronomy.SearchRiseSet(Astronomy.Body.Sun, obs, +1, dayStart, 1);
+      if (rise) {
+        const sp = Astronomy.MoonPhase(rise.date);
+        const sNum = Math.floor((sp % 180) / 12) + 1;
+        const sKrishna = sp >= 180;
+        const sMap = sKrishna ? krishna : shukla;
+        const sLabel = sNum === 15 ? (sKrishna ? "Amavasya" : "Poornima") : tithiNames[sNum - 1];
+        const rt = luxon.DateTime.fromJSDate(rise.date, { zone: tz }).toFormat("hh:mm a");
+        tithiTimesText += ` Sunrise tithi that day (${rt}): ${sKrishna ? "Krishna" : "Shukla"} ${sNum}. ${sLabel} – ${sMap[sNum - 1][0]}. Your result above uses the tithi at your exact birth time.`;
+      }
+    } catch (e) {}
+  }
 
   const isShukla = phase < 180;
   const within = isShukla ? phase : phase - 180;
@@ -493,9 +541,9 @@ function calculateAndRenderResult(dob, tob, tz) {
   if (meaningEnEl) meaningEnEl.textContent = data.meaningEn;
   if (meaningTaEl) meaningTaEl.textContent = data.meaningTa;
   if (sourceNoteEl) {
-    sourceNoteEl.innerHTML = num === 15
+    sourceNoteEl.innerHTML = (num === 15
       ? "<strong>Tradition note:</strong> This result follows the Sri Vidya mapping in which Poornima/Amavasya are assigned to Maha Tripura Sundari."
-      : "<strong>Tradition note:</strong> Calculated using standard astronomical Moon-Sun longitude separation (12° per Tithi).";
+      : "<strong>Tradition note:</strong> Calculated using geocentric Moon-Sun longitude separation (12° per Tithi) at the exact birth moment.") + tithiTimesText;
   }
 
   // Populate Worship Attributes

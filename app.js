@@ -684,7 +684,7 @@ function initCustomTimezoneDropdown() {
     const filtered = TIMEZONE_OPTIONS.filter(o => o.label.toLowerCase().includes(query) || o.value.toLowerCase().includes(query));
 
     if (filtered.length === 0) {
-      optionsList.innerHTML = `<div style="padding: 12px; font-size: 13px; color: var(--ink-muted); text-align: center;">No time zones match "${filterText}"</div>`;
+      optionsList.innerHTML = `<div style="padding: 12px; font-size: 13px; color: var(--ink-muted); text-align: center;">No time zones match "${filterText.replace(/[&<>"']/g, (ch) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch]))}"</div>`;
       return;
     }
 
@@ -770,6 +770,67 @@ function initCustomTimezoneDropdown() {
       popover.classList.remove("active");
       wrapper.classList.remove("active");
       if (tzGroup) tzGroup.classList.remove("active");
+    }
+  });
+}
+
+// Known birthplaces: selecting one auto-fills time zone and coordinates (used for sunrise tithi)
+const CITY_OPTIONS = [
+  { name: "Chennai, Tamil Nadu, India", lat: 13.0827, lon: 80.2707, tz: "Asia/Kolkata" },
+  { name: "Madurai, Tamil Nadu, India", lat: 9.9252, lon: 78.1198, tz: "Asia/Kolkata" },
+  { name: "Coimbatore, Tamil Nadu, India", lat: 11.0168, lon: 76.9558, tz: "Asia/Kolkata" },
+  { name: "Trichy, Tamil Nadu, India", lat: 10.7905, lon: 78.7047, tz: "Asia/Kolkata" },
+  { name: "Salem, Tamil Nadu, India", lat: 11.6643, lon: 78.146, tz: "Asia/Kolkata" },
+  { name: "Tirunelveli, Tamil Nadu, India", lat: 8.7139, lon: 77.7567, tz: "Asia/Kolkata" },
+  { name: "Bengaluru, Karnataka, India", lat: 12.9716, lon: 77.5946, tz: "Asia/Kolkata" },
+  { name: "Hyderabad, Telangana, India", lat: 17.385, lon: 78.4867, tz: "Asia/Kolkata" },
+  { name: "Kochi, Kerala, India", lat: 9.9312, lon: 76.2673, tz: "Asia/Kolkata" },
+  { name: "Mumbai, Maharashtra, India", lat: 19.076, lon: 72.8777, tz: "Asia/Kolkata" },
+  { name: "Delhi, India", lat: 28.6139, lon: 77.209, tz: "Asia/Kolkata" },
+  { name: "Kolkata, West Bengal, India", lat: 22.5726, lon: 88.3639, tz: "Asia/Kolkata" },
+  { name: "Colombo, Sri Lanka", lat: 6.9271, lon: 79.8612, tz: "Asia/Colombo" },
+  { name: "Jaffna, Sri Lanka", lat: 9.6615, lon: 80.0255, tz: "Asia/Colombo" },
+  { name: "Singapore", lat: 1.3521, lon: 103.8198, tz: "Asia/Singapore" },
+  { name: "Kuala Lumpur, Malaysia", lat: 3.139, lon: 101.6869, tz: "Asia/Kuala_Lumpur" },
+  { name: "Dubai, UAE", lat: 25.2048, lon: 55.2708, tz: "Asia/Dubai" },
+  { name: "London, United Kingdom", lat: 51.5072, lon: -0.1276, tz: "Europe/London" },
+  { name: "New York, USA", lat: 40.7128, lon: -74.006, tz: "America/New_York" },
+  { name: "Chicago, USA", lat: 41.8781, lon: -87.6298, tz: "America/Chicago" },
+  { name: "Dallas, USA", lat: 32.7767, lon: -96.797, tz: "America/Chicago" },
+  { name: "San Francisco, USA", lat: 37.7749, lon: -122.4194, tz: "America/Los_Angeles" },
+  { name: "Sydney, Australia", lat: -33.8688, lon: 151.2093, tz: "Australia/Sydney" }
+];
+
+let selectedCity = null;
+
+function initPlaceAutocomplete() {
+  const placeInput = document.getElementById("place");
+  if (!placeInput) return;
+
+  const list = document.createElement("datalist");
+  list.id = "placeList";
+  CITY_OPTIONS.forEach((c) => {
+    const o = document.createElement("option");
+    o.value = c.name;
+    list.appendChild(o);
+  });
+  document.body.appendChild(list);
+  placeInput.setAttribute("list", "placeList");
+
+  placeInput.addEventListener("input", () => {
+    const v = placeInput.value.trim().toLowerCase();
+    selectedCity = CITY_OPTIONS.find((c) => c.name.toLowerCase() === v) || null;
+    if (selectedCity) {
+      const hidden = document.getElementById("tz");
+      const display = document.getElementById("tzSelectInput");
+      const customGroup = document.getElementById("customTzGroup");
+      if (hidden) hidden.value = selectedCity.tz;
+      if (display) {
+        const opt = TIMEZONE_OPTIONS.find((o) => o.value === selectedCity.tz);
+        display.value = opt ? opt.label : selectedCity.tz;
+      }
+      if (customGroup) customGroup.classList.add("hidden");
+      clearFieldError("tz", "tzError");
     }
   });
 }
@@ -913,7 +974,7 @@ function calculateTithi() {
 
   // Validate Birth Time
   if (!tobInput || !tobInput.value) {
-    showFieldError("tob", "tobError", "Please enter your birth time / பிறந்த நேரத்தை உள்ளிடவும்");
+    showFieldError("tob", "tobError", "Please select hour, minute and AM/PM / மணி, நிமிடம் மற்றும் AM/PM தேர்ந்தெடுக்கவும்");
     firstInvalid = firstInvalid || tobInput;
   }
 
@@ -974,7 +1035,17 @@ function calculateTithi() {
   showLoadingOverlay();
 
   // Build target URL with parameters
-  const query = new URLSearchParams({ dob, tob, tz, place }).toString();
+  const qp = { dob, tob, tz, place };
+  if (selectedCity) {
+    qp.lat = String(selectedCity.lat);
+    qp.lon = String(selectedCity.lon);
+    sessionStorage.setItem("tithi_lat", qp.lat);
+    sessionStorage.setItem("tithi_lon", qp.lon);
+  } else {
+    sessionStorage.removeItem("tithi_lat");
+    sessionStorage.removeItem("tithi_lon");
+  }
+  const query = new URLSearchParams(qp).toString();
   const targetUrl = `result.html?${query}`;
 
   // Smooth transition to result page (keeping overlay active so form never flashes back)
@@ -1759,6 +1830,7 @@ document.addEventListener("DOMContentLoaded", () => {
   initMappingTable();
   initCustomCalendar();
   initCustomTimezoneDropdown();
+  initPlaceAutocomplete();
   bindCustomPickerTriggers();
   bindRealtimeErrorClearing();
   initAudioJapaListeners();
